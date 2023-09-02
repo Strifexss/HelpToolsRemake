@@ -8,7 +8,7 @@ interface Props {
 
 export default function inputText({Placeholder, Type, name}:Props) {
     return(
-        <div className="w-full flex flex-col items-start gap-2">
+        <div className="w-full flex flex-col items-start gap-4">
             {/*<label htmlFor={name} 
             className="text-[white] cursor-pointer font-bold text-[0.8rem]">
                 {name}
