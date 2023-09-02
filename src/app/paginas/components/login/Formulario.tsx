@@ -5,7 +5,7 @@ import Button from "./components/Button"
 
 export default function Formulario() {
     return(
-        <div className="w-screen h-screen md:w-[40%] md:h-full bg-[black] p-8 md:p-16 2xl:p-20 ">
+        <div className="w-screen h-screen md:w-[40%] md:h-full bg-[black] p-8 md:p-16 2xl:p-20 overflow-y-scroll scrollbar-hide">
             <div className="w-full h-full flex flex-col items-start justify-center gap-10">
                 <Image className="w-[17rem] h-[3.5rem]"
                     src={Logo}

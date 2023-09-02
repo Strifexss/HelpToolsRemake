@@ -19,6 +19,6 @@ const config: Config = {
       "preto": "#1D1D1B"
     }
   },
-  plugins: [],
+  plugins: [require('tailwind-scrollbar-hide')],
 }
 export default config
