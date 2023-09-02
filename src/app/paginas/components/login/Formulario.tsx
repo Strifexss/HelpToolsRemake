@@ -5,7 +5,7 @@ import Button from "./components/Button"
 
 export default function Formulario() {
     return(
-        <div className="w-[40%] h-full bg-[black] 2xl:p-20 md:p-8">
+        <div className="w-screen h-screen md:w-[40%] md:h-full bg-[black] p-8 md:p-16 2xl:p-20 ">
             <div className="w-full h-full flex flex-col items-start justify-center gap-10">
                 <Image className="w-[17rem] h-[3.5rem]"
                     src={Logo}
@@ -13,15 +13,16 @@ export default function Formulario() {
                     height={1000}
                     alt="Softcom"
                 />
-                <h1 className="text-[white] font-bold text-[2.5rem]">
+                <h1 className="text-[white] font-bold text-[2rem] 2xl:text-[2.5rem]">
                     Login
                 </h1>
                 <section className="w-full flex flex-col justify-start gap-8">
+                    <h1 className="text-[red] font-bold text-[0.8rem] hidden">Usuario ou senha incorreto</h1>
                     <InputText Placeholder="Insira o seu Email:" Type="text" name="Email:"/>
                     <InputText Placeholder="Insira a sua Senha:" Type="password" name="Password:"/>
-                    <h1 className="text-[#909090] hover:text-[white] cursor-pointer">
+                    <a className="text-[#909090] hover:text-[white] cursor-pointer text-[0.8rem]">
                         Esqueceu a Senha?
-                    </h1>
+                    </a>
                     <Button/>
                 </section>
             </div>

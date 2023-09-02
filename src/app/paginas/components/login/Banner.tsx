@@ -4,7 +4,7 @@ import BannerSoftcom from "@/app/imgs/BannerSoftcom.png"
 export default function Banner() {
     
     return(
-    <div className="w-[90%] h-full">
+    <div className="w-[90%] h-full hidden md:block">
         <Image className="w-full h-full"
             src={BannerSoftcom}
             width={1000}
