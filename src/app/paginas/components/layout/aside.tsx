@@ -4,7 +4,7 @@ import ButtonsSection from "./asideComponents/ButtonsSection"
 
 export default function Aside() {
     return(
-        <div className="md:w-[18%] 2xl:w-[15%] h-full bg-padraoCinzaC md:p-4 2xl:p-8 flex flex-col gap-10">
+        <div className="hidden md:w-[18%] 2xl:w-[15%] h-full bg-padraoCinzaC md:p-4 2xl:p-8 md:flex flex-col gap-10">
             <Image className="bg-[white] p-2 rounded-md"
                 src={Logo}
                 alt="Softcom"
