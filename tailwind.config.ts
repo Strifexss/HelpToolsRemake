@@ -17,7 +17,13 @@ const config: Config = {
     colors: {
       "amareloPadrao": "#F3D332",
       "preto": "#1D1D1B",
-      "Light1": "#F9FBFF"
+      "Light1": "#F9FBFF",
+      "padraoCinzaC": "#111521",
+      "padraoCinzaE": "#070B14",
+      "padraoCinzaSC": "#1F2437",
+      "dourado": "#F28D19",
+      "blueButton": "#4476F9",
+      "orangeButton": "#FB8B03"
     }
   },
   plugins: [require('tailwind-scrollbar-hide')],
