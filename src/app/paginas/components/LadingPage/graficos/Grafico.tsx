@@ -31,7 +31,7 @@ export default function Grafico({ Tipo }: Props) {
       data: {
         labels: ['Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sabado', 'Domingo'],
         datasets: [{
-          label: 'Aulas Semanais',
+          label: 'Ocorrências',
           data: [12, 19, 3, 5, 2, 3, 10],
           borderWidth: 3,
           backgroundColor: ['orange', '#55BCC9'],

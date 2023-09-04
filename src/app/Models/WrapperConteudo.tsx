@@ -1,4 +1,5 @@
 export default interface WrapperConteudo {
-    Icone: React.ReactNode,
-    Texto: string
+    Icone?: React.ReactNode,
+    Texto: string,
+    data?: string
 }
