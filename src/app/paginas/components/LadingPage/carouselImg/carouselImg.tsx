@@ -22,8 +22,8 @@ export default function CarouselImg() {
         height={1000}
       />
       <div className="w-full h-[25%] flex flex-col items-center justify-center">
-        <h1 className="text-[white] font-semibold">{data.textoPrincipal}</h1>
-        <h1 className="text-[gray] font-semibold">{data.textoSecundario}</h1>
+        <h1 className="text-[white] font-semibold text-center">{data.textoPrincipal}</h1>
+        <h1 className="text-[gray] font-semibold text-center">{data.textoSecundario}</h1>
       </div>
     </div>
   );
