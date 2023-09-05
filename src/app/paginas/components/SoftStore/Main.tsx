@@ -8,21 +8,11 @@ export default function Main() {
 
     const [valor, setValor] = useState<number>(0)
 
-    function aumentarValor(preco:number) {
-        setValor(valor + preco)
-    }
-    function diminuirValor(preco:number) {
-        if(valor == 0) {
-            setValor(0)
-        }
-        else
-        {setValor(valor - preco)}
-    }
 
     return(
         <div className="w-full h-full flex flex-col items-center gap-10 ">
             <SearchBar/>
-            <ItemsSpace aumentarValor={() => aumentarValor(100)} diminuirValor={() => diminuirValor(100)}/>
+            <ItemsSpace valor={setValor} valorNumero={valor}/>
             <section className=" w-full flex items-end justify-center">
                 <BuyBar valor={valor} />
             </section>                

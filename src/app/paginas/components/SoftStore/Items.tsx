@@ -6,17 +6,19 @@ import { ArrowLeft, ArrowRight } from "lucide-react"
 import { useState } from "react"
 
 interface Props {
-    aumentarValor: () => void,
-    diminuirValor: () => void
+    valor: React.Dispatch<React.SetStateAction<number>>;
+    valorNumero: number,
+    preco: number
 }
 
-export default function Items({aumentarValor, diminuirValor}:Props) {
+export default function Items({valor, valorNumero, preco}:Props) {
 
     const [quantidade, setQuantidade] = useState<number>(0)
 
 
     function aumentarQuantidade() {
         setQuantidade(quantidade + 1)
+        valor(valorNumero + preco)
     }
 
 
@@ -26,6 +28,7 @@ export default function Items({aumentarValor, diminuirValor}:Props) {
         }
         else {
             setQuantidade(quantidade - 1)
+            valor(valorNumero - preco)
         }
     }
 
@@ -42,11 +45,11 @@ export default function Items({aumentarValor, diminuirValor}:Props) {
                 <h1 className="text-[white] font-semibold">Mans Shirt Casual</h1>
                 <h1 className="text-[gray] text-[0.8rem] font-semibold">Blue M</h1>
                 <section className="w-full flex flex-row justify-between items-center">
-                    <h1 className="text-[Orange] text-[0.8rem] font-semibold">$20,00</h1>
+                    <h1 className="text-[Orange] text-[0.8rem] font-semibold">${preco}</h1>
                     <section className="flex flex-row gap-2">
-                        <ArrowLeft color="white" onClick={() => {diminuirQuantidade(), diminuirValor()}}/>
+                        <ArrowLeft color="white" onClick={() => diminuirQuantidade()}/>
                         <h1 className="text-[white] w-[2rem] text-center bg-padraoCinzaSC">{quantidade}</h1>
-                        <ArrowRight color="white" onClick={() => {aumentarQuantidade(), aumentarValor()}}/>
+                        <ArrowRight color="white" onClick={() => aumentarQuantidade() }/>
                     </section>
                 </section>
             </section>
