@@ -4,21 +4,21 @@ import { Banner } from "@/app/imgs/imgExport"
 import Image from "next/image"
 import { ArrowLeft, ArrowRight } from "lucide-react"
 import { useState } from "react"
+import ISoftStoreData from "@/app/Models/SoftStoreData"
 
-interface Props {
-    valor: React.Dispatch<React.SetStateAction<number>>;
+interface Props extends ISoftStoreData {
+    setValor: React.Dispatch<React.SetStateAction<number>>;
     valorNumero: number,
-    preco: number
 }
 
-export default function Items({valor, valorNumero, preco}:Props) {
+export default function Items({setValor, valorNumero, nome, preco, type, image}:Props) {
 
     const [quantidade, setQuantidade] = useState<number>(0)
 
 
     function aumentarQuantidade() {
         setQuantidade(quantidade + 1)
-        valor(valorNumero + preco)
+        setValor(valorNumero + preco)
     }
 
 
@@ -28,7 +28,7 @@ export default function Items({valor, valorNumero, preco}:Props) {
         }
         else {
             setQuantidade(quantidade - 1)
-            valor(valorNumero - preco)
+            setValor(valorNumero - preco)
         }
     }
 
@@ -36,14 +36,14 @@ export default function Items({valor, valorNumero, preco}:Props) {
     return(
         <div className=" w-[100%] md:w-[25rem] h-[10rem] bg-padraoCinzaC flex flex-row cursor-pointer">
             <Image className="w-[40%]"
-                src={Banner}
+                src={image}
                 alt="Imagem"
                 width={1000}
                 height={1000}
             />
             <section className="w-full h-full flex flex-col p-4 gap-2 justify-center">
-                <h1 className="text-[white] font-semibold">Mans Shirt Casual</h1>
-                <h1 className="text-[gray] text-[0.8rem] font-semibold">Blue M</h1>
+                <h1 className="text-[white] font-semibold">{nome}</h1>
+                <h1 className="text-[gray] text-[0.8rem] font-semibold">{type}</h1>
                 <section className="w-full flex flex-row justify-between items-center">
                     <h1 className="text-[Orange] text-[0.8rem] font-semibold">${preco}</h1>
                     <section className="flex flex-row gap-2">
