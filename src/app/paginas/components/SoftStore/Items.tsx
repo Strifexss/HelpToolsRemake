@@ -46,7 +46,7 @@ export default function Items({aumentarValor, diminuirValor}:Props) {
                     <section className="flex flex-row gap-2">
                         <ArrowLeft color="white" onClick={() => {diminuirQuantidade(), diminuirValor()}}/>
                         <h1 className="text-[white] w-[2rem] text-center bg-padraoCinzaSC">{quantidade}</h1>
-                        <ArrowRight color="white" onClick={() => {aumentarQuantidade(), aumentarValor(100)}}/>
+                        <ArrowRight color="white" onClick={() => {aumentarQuantidade(), aumentarValor()}}/>
                     </section>
                 </section>
             </section>
