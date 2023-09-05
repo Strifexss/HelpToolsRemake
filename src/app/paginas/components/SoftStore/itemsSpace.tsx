@@ -29,15 +29,6 @@ export default function ItemsSpace({ valor, valorNumero}:Props) {
       }, []);
     return(
         <div className="w-full h-full overflow-y-scroll scrollbar-hide flex justify-center flex-wrap gap-8">
-            <Items nome="Shirt's Man" type="Shirt" setValor={valor} valorNumero={valorNumero} preco={10.00}/>
-            <Items nome="Shirt's Man" type="Shirt" setValor={valor} valorNumero={valorNumero} preco={10.00}/>
-            <Items nome="Shirt's Man" type="Shirt" setValor={valor} valorNumero={valorNumero} preco={10.00}/>
-            <Items nome="Shirt's Man" type="Shirt" setValor={valor} valorNumero={valorNumero} preco={10.00}/>
-            <Items nome="Shirt's Man" type="Shirt" setValor={valor} valorNumero={valorNumero} preco={10.00}/>
-            <Items nome="Shirt's Man" type="Shirt" setValor={valor} valorNumero={valorNumero} preco={10.00}/>
-            <Items nome="Shirt's Man" type="Shirt" setValor={valor} valorNumero={valorNumero} preco={10.00}/>
-            <Items nome="Shirt's Man" type="Shirt" setValor={valor} valorNumero={valorNumero} preco={10.00}/>
-            <Items nome="Shirt's Man" type="Shirt" setValor={valor} valorNumero={valorNumero} preco={10.00}/>
             {dados?.map(x => {
                 return(
                     <Items image={x.image} key={x.nome} nome={x.nome} type={x.type} setValor={valor} valorNumero={valorNumero} preco={x.preco}/>
