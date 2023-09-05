@@ -10,6 +10,14 @@ function useRota(rota:string) {
     return useRota("/")
   }
 
+  function RotaHome() {
+    return useRota("/paginas/LandingPage")
+  }
+  
+  function RotaSoftStore() {
+    return useRota("/paginas/SoftStore")
+  }
+
   export {
-    Deslogar
+    Deslogar, RotaHome, RotaSoftStore
   }

@@ -9,7 +9,7 @@ export default function Mobile() {
 
     return(
         <>
-        <div className="w-full h-[4rem] fixed bg-padraoCinzaC md:hidden flex items-center px-4 justify-between">
+        <div className="w-full h-[4rem] absolute bg-padraoCinzaC md:hidden flex items-center px-4 justify-between">
             <h1 className="text-[white] font-bold text-[1.5rem]">
                 Softcom
             </h1>
