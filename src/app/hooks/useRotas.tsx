@@ -17,7 +17,11 @@ function useRota(rota:string) {
   function RotaSoftStore() {
     return useRota("/paginas/SoftStore")
   }
+ 
+  function RotaDownloads() {
+    return useRota("/paginas/Downloads")
+  }
 
   export {
-    Deslogar, RotaHome, RotaSoftStore
+    Deslogar, RotaHome, RotaSoftStore, RotaDownloads
   }
