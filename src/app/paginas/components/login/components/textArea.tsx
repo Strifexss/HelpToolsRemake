@@ -8,7 +8,7 @@ export default function TextArea() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const {logar, errorAlert} = useLogar({ Login: email, password: password });
+  const {logar, errorAlert, Loading} = useLogar({ Login: email, password: password });
 
   const handleEmailChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(event.target.value);
@@ -45,7 +45,7 @@ export default function TextArea() {
       <a className="text-[#909090] hover:text-[white] cursor-pointer text-[0.8rem]">
         Esqueceu a Senha?
       </a>
-      <Button content="Login" Click={() => handleClick()} />
+        <Button loading={Loading} content="Login" Click={() => handleClick()} />      
     </section>
   );
 }

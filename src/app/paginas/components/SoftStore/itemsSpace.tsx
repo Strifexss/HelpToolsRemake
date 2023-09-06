@@ -32,7 +32,6 @@ export default function ItemsSpace({ valor, valorNumero}:Props) {
             {dados?.map(x => {
                 return(
                     <Items image={x.image} key={x.nome} nome={x.nome} type={x.type} setValor={valor} valorNumero={valorNumero} preco={x.preco}/>
-                    
                 )
             })}         
         </div>
