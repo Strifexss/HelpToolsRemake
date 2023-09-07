@@ -2,7 +2,7 @@ import SearchBar from "../SoftStore/SearchBar"
 import ButtonDownload from "./ButtonDownloads"
 import DownloadsItems from "./DownloadsItems"
 import DownloadArea from "./DownloadArea"
-import Grupos from "./Grupos"
+import Grupos from "./GruposArea"
 
 export default function Main() {
     return(
