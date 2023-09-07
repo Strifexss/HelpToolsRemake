@@ -1,21 +1,54 @@
 import IDownloads from "@/app/Models/IDownloads"
+import { XCircle } from "lucide-react";
 
 interface Props {
     handleInfoModal: React.Dispatch<React.SetStateAction<boolean>>;
-    ModalData: IDownloads | null
+    ModalData: IDownloads | null,
 }
 
 export default function ModalsInfos({handleInfoModal, ModalData}:Props) {
     return(
-        <div className="bg-padraoCinzaE w-[30rem] h-[30rem] absolute">
-            <h1 onClick={() => handleInfoModal(false)}
-                className="text-[white]">
-                Fechar
-            </h1>
-            <h1 onClick={() => handleInfoModal(false)}
-                className="text-[white]">
-              {ModalData?.nome}
-            </h1>
+        <div className="bg-padraoCinzaE w-[30rem] h-[30rem] absolute p-8 flex flex-col gap-8 border-dourado border-[2px]  2xl:translate-y-[7rem]">
+            <div className="w-full flex justify-between">
+                <h1 className="text-[white] font-semibold text-[1.2rem]">
+                    {ModalData?.nome}
+                </h1>
+               <XCircle onClick={() => handleInfoModal(false)} color="white" className="cursor-pointer"/>
+            </div>
+            <div className="flex w-full flex-col gap-2">
+                <div className="w-full bg-padraoCinzaSC h-[4rem] flex justify-between items-center px-4">
+                    <h1 className="text-[white] font-semibold">
+                        ID:
+                    </h1>
+                    <h1 className="text-[white] font-semibold">
+                        {ModalData?.id}
+                    </h1>
+                </div>
+                <div className="w-full bg-padraoCinzaSC h-[4rem] flex justify-between items-center px-4">
+                    <h1 className="text-[white] font-semibold">
+                        Versão:
+                    </h1>
+                    <h1 className="text-[white] font-semibold">
+                        {ModalData?.versão}
+                    </h1>
+                </div>
+                <div className="w-full bg-padraoCinzaSC h-[4rem] flex justify-between items-center px-4">
+                    <h1 className="text-[white] font-semibold">
+                        Downloads:
+                    </h1>
+                    <h1 className="text-[white] font-semibold">
+                        {ModalData?.Downloads}
+                    </h1>
+                </div>
+                <div className="w-full bg-padraoCinzaSC h-[4rem] flex justify-between items-center px-4 overflow-hidden">
+                    <h1 className="text-[white] font-semibold">
+                        Local:
+                    </h1>
+                    <h1 className="text-[white] font-semibold">
+                        {ModalData?.Local}
+                    </h1>
+                </div>
+            </div>
         </div>
     )
 }

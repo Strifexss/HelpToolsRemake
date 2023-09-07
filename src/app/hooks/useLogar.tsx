@@ -20,7 +20,6 @@ export default function useLogar({Login, password}:Props) {
           setLoading(true)
           setTimeout(function() {
             rota.push("/paginas/LandingPage");
-            setLoading(false)
           }, 3000);
           
         } else {

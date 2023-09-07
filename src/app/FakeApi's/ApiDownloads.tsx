@@ -49,6 +49,48 @@ const data:DownloadsData[] = [{
     Local: "\\goku\matrizes$\Emissores\NFe\SetupNFe.rar",
     tamanho: 28210247,
     versão: "9.7.6.0"
+},{
+    id: 8,
+    Downloads: 123,
+    nome: "Elgin i9 e i7 Drivers",
+    Local: "\\goku\executaveis$\CD PACOTE\ImpressoraNaoFiscal\Elgin\Elgin-I9-NaoFiscal.rar",
+    tamanho: 0,
+    versão: ""
+},{
+    id: 9,
+    Downloads: 35,
+    nome: "QRCode DLL",
+    Local: "\\goku\matrizes$\SOFTSHOP\DAV\LIB\QRCodeSetup.rar",
+    tamanho: 0,
+    versão: "1.2.1"
+},{
+    id: 7,
+    Downloads: 12,
+    nome: "Emissor NFe",
+    Local: "\\goku\matrizes$\Emissores\NFe\SetupNFe.rar",
+    tamanho: 28210247,
+    versão: "9.7.6.0"
+},{
+    id: 7,
+    Downloads: 12,
+    nome: "Emissor NFe",
+    Local: "\\goku\matrizes$\Emissores\NFe\SetupNFe.rar",
+    tamanho: 28210247,
+    versão: "9.7.6.0"
+},{
+    id: 7,
+    Downloads: 12,
+    nome: "Emissor NFe",
+    Local: "\\goku\matrizes$\Emissores\NFe\SetupNFe.rar",
+    tamanho: 28210247,
+    versão: "9.7.6.0"
+},{
+    id: 7,
+    Downloads: 12,
+    nome: "Emissor NFe",
+    Local: "\\goku\matrizes$\Emissores\NFe\SetupNFe.rar",
+    tamanho: 28210247,
+    versão: "9.7.6.0"
 },]
 
 const JsonData = JSON.stringify(data)

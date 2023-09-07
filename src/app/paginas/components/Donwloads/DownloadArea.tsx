@@ -4,13 +4,16 @@ import DownloadsItems from "./DownloadsItems";
 import FetchDataDownloads from "@/app/hooks/useDownloadData";
 import DownloadsData from "@/app/Models/IDownloads";
 import ModalsInfos from "./Modals/InfoModals";
+import IDownloads from "@/app/Models/IDownloads";
 
 interface Props {
     handleInfoModal: React.Dispatch<React.SetStateAction<boolean>>;
     ModalDataTransfer: React.Dispatch<React.SetStateAction<DownloadsData | null>>;
+    CheckedItems: React.Dispatch<React.SetStateAction<DownloadsData[] | null>>;
+    CheckedItemsArray: IDownloads[] | null
 }
 
-export default function DownloadArea({handleInfoModal, ModalDataTransfer}:Props){
+export default function DownloadArea({handleInfoModal, ModalDataTransfer, CheckedItems, CheckedItemsArray}:Props){
 
     const [data, setData] = useState<DownloadsData[] | null >(null)
     
@@ -33,7 +36,7 @@ export default function DownloadArea({handleInfoModal, ModalDataTransfer}:Props)
 
 
     return(
-        <section className="h-full md:h-[100%] 2xl:h-[100%] w-full md:w-[65%] bg-padraoCinzaSC rounded-md flex flex-col">
+        <section className="h-full 2xl:h-[90vh] w-full md:w-[65%] bg-padraoCinzaSC rounded-md flex flex-col">
 <div className="w-full bg-dourado h-[5rem]  flex justify-center items-center">
     <h1 className="md:text-[1.5rem] font-semibold text-[white] text-center">
         Arquivos disponiveis para download
@@ -50,7 +53,7 @@ export default function DownloadArea({handleInfoModal, ModalDataTransfer}:Props)
     {
         data?.map(x => {
             return(
-                <DownloadsItems ModalDataTransfer={ModalDataTransfer} handleInfoModal={handleInfoModal} key={x.id} id={x.id} nome={x.nome} Downloads={x.Downloads} Local={x.Local} tamanho={x.tamanho} versão={x.versão}/>
+                <DownloadsItems CheckedItemsArray={CheckedItemsArray} CheckedItems={CheckedItems} ModalDataTransfer={ModalDataTransfer} handleInfoModal={handleInfoModal} key={x.id} id={x.id} nome={x.nome} Downloads={x.Downloads} Local={x.Local} tamanho={x.tamanho} versão={x.versão}/>
             )
         })
     }
