@@ -1,5 +1,5 @@
 import WrapperConteudo from "@/app/Models/WrapperConteudo"
-
+import Link from "next/link"
 interface Props {
     headerTexto: string,
     Conteudo?: WrapperConteudo[],
@@ -20,12 +20,14 @@ export default function Wrapper({headerTexto, Conteudo, hasDate = false, hasIcon
                 hasIcon &&
                 Conteudo?.map(x => {
                     return(
-                        <div key={x.Texto} className="w-full h-[4rem] bg-padraoCinzaSC hover:bg-padraoCinzaC cursor-pointer flex flex-row items-center p-4 gap-6">
+                        <Link key={x.Texto}  href='https://www.youtube.com/watch?v=lpQhspw3FY4' target="_blank">
+                        <div  className="w-full h-[4rem] bg-padraoCinzaSC hover:bg-padraoCinzaC cursor-pointer flex flex-row items-center p-4 gap-6">
                                 {x.Icone}
                                 <h1 className="text-[white] font-semibold">
                                     {x.Texto}
                                 </h1>
                         </div>
+                        </Link>
                     )
                 })
                 }

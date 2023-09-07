@@ -18,12 +18,12 @@ export default function DownloadsItems() {
             </section>
             <section className="w-full h-full hidden md:flex justify-center items-center">
             <h1 className="text-[white] font-semibold">
-                    3.2.6.1
+                <Info color="white" />
                 </h1>
             </section>
             <section className="w-full h-full flex justify-center items-center">
             <h1 className="text-[white] font-semibold">
-                    <Info color="orange"/>
+                    <input type="checkbox" name="" id="" />
                 </h1>
             </section>
         </div>

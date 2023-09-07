@@ -1,7 +1,14 @@
 export default function Grupos() {
     return(
-        <div className="w-[12rem] h-[4.5rem] hover:bg-[orange] bg-orangeButton rounded-xl flex justify-center items-center cursor-pointer">
-            <h1 className="text-[white] font-semibold text-[1.2rem]">NFE</h1>
-        </div>
+        <section className="w-full md:w-[40%] h-full flex flex-col">
+            <section className="w-full h-full bg-padraoCinzaSC flex flex-col scrollbar-hide gap-4 rounded-md">
+                <div className="bg-dourado font-semibold flex justify-center items-center w-full h-[5rem]">
+
+                </div>
+                <section className="w-full h-full flex flex-row flex-wrap">
+
+                </section>
+            </section>
+        </section>
     )
 }
