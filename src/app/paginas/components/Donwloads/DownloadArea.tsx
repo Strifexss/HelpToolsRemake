@@ -5,10 +5,15 @@ import FetchDataDownloads from "@/app/hooks/useDownloadData";
 import DownloadsData from "@/app/Models/IDownloads";
 import ModalsInfos from "./Modals/InfoModals";
 
-export default function DownloadArea(){
+interface Props {
+    handleInfoModal: React.Dispatch<React.SetStateAction<boolean>>;
+    ModalDataTransfer: React.Dispatch<React.SetStateAction<DownloadsData | null>>;
+}
+
+export default function DownloadArea({handleInfoModal, ModalDataTransfer}:Props){
 
     const [data, setData] = useState<DownloadsData[] | null >(null)
-    const [showInfoModal, setShowInfoModal] = useState(false)
+    
     const [dataInfoModal, setDataInfoModal] = useState<DownloadsData | null>(null)
 
 
@@ -45,7 +50,7 @@ export default function DownloadArea(){
     {
         data?.map(x => {
             return(
-                <DownloadsItems key={x.id} id={x.id} nome={x.nome} Downloads={x.Downloads} Local={x.Local} tamanho={x.tamanho} versão={x.versão}/>
+                <DownloadsItems ModalDataTransfer={ModalDataTransfer} handleInfoModal={handleInfoModal} key={x.id} id={x.id} nome={x.nome} Downloads={x.Downloads} Local={x.Local} tamanho={x.tamanho} versão={x.versão}/>
             )
         })
     }
