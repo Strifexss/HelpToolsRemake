@@ -1,6 +1,6 @@
 import IDownloads from "@/app/Models/IDownloads"
 
-interface Props extends IDownloads {
+interface Props {
     handleInfoModal: React.Dispatch<React.SetStateAction<boolean>>;
     ModalData: IDownloads | null
 }
