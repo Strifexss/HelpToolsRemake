@@ -61,7 +61,8 @@ export default function DownloadsItems({Downloads, Local, id, nome, tamanho, ver
                 </h1>
             </section>
             <section className="w-full h-full flex justify-center items-center">
-            <h1 className="text-[white] font-semibold" onClick={() => {handleItemBox()}}>
+            <h1 className={`${ItemChecked ? "text-[orange]" : "text-[white]"} font-semibold`} 
+                onClick={() => {handleItemBox()}}>
                    {ItemChecked ? "Remover" : "Adicionar"}
                 </h1>
             </section>
