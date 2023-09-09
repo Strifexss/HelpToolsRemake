@@ -1,7 +1,7 @@
 import { Book, Download, Headphones, Home, Library, Store, Triangle, User2, } from "lucide-react";
 import Buttons from "../asideComponents/Buttons";
 import { UserModel } from "@/app/Models/UserModel";
-import { Deslogar, RotaHome, RotaSoftStore, RotaDownloads } from "@/app/hooks/useRotas";
+import { Deslogar, RotaHome, RotaSoftStore, RotaDownloads, RotaConhecimentos } from "@/app/hooks/useRotas";
 export default function Items() {
 
     const Usuario = new UserModel()
@@ -12,7 +12,7 @@ export default function Items() {
                <section className="w-full gap-4">
                 <Buttons Click={RotaHome()} Conteudo="Inicio" hasBackground Icone={<Home color="white"/>} key={"Inicio"}/>
                 <Buttons Click={RotaDownloads()} Conteudo="Download" hasBackground Icone={<Download color="white"/>} key={"Download"}/>
-                <Buttons Conteudo="Conhecimento" hasBackground Icone={<Library color="white"/>} key={"Conhecimento"}/>
+                <Buttons Click={RotaConhecimentos()} Conteudo="Conhecimento" hasBackground Icone={<Library color="white"/>} key={"Conhecimento"}/>
                 <Buttons Click={RotaSoftStore()} Conteudo="SoftStore" hasBackground Icone={<Store color="white"/>} key={"Conhecimento"}/>
             </section>
             <section className="w-full gap-4">

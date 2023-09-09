@@ -12,8 +12,8 @@ export default function ModalDownloadPersonalizado({items, ClickCancelar}:Props)
     }
 
     return(
-        <div className="bg-padraoCinzaE w-[30rem] h-[30rem] absolute p-8 flex flex-col gap-8 border-dourado border-[2px]  2xl:translate-y-[7rem]">
-            <div className="text-[white] text-[1.2rem] font-semibold flex justify-center items-center">
+        <div className="bg-padraoCinzaE w-[90vw] h-[60vh] md:w-[30rem] md:h-[30rem] absolute p-8 flex flex-col gap-8 border-dourado border-[2px]  2xl:translate-y-[7rem]">
+            <div className="text-[white] text-[1.2rem] font-semibold flex justify-center items-center text-center">
                 <h1>
                     Deseja Baixar os seguintes items?
                 </h1>
@@ -22,7 +22,7 @@ export default function ModalDownloadPersonalizado({items, ClickCancelar}:Props)
                 { items?.map(x => {
                     return(
                     <div key={x.id} className="w-full bg-padraoCinzaSC h-[5rem] flex justify-center items-center p-4 rounded-md">
-                        <h1 className="text-[white] font-semibold">
+                        <h1 className="text-[white] font-semibold text-center">
                             {x.nome}    
                         </h1>
                      </div>

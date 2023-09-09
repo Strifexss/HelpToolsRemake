@@ -1,6 +1,10 @@
 import { Download } from "lucide-react"
 
-export default function GruposItems() {
+interface Props {
+    conteudo: string
+}
+
+export default function GruposItems({conteudo}:Props) {
     return(
         <div className="w-full h-[4rem] bg-padraoCinzaC hover:bg-padraoCinzaE flex flex-row gap-16 justify-start px-8 cursor-pointer">
             <div className="h-full flex justify-center items-center">
@@ -8,7 +12,7 @@ export default function GruposItems() {
             </div>
             <div className="h-full flex justify-center items-center">
                 <h1 className="text-[white] font-semibold">
-                    Pacote Softshop
+                    {conteudo}
                 </h1>
             </div>
         </div>
