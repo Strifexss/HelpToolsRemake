@@ -1,7 +1,7 @@
 "use client"
 import { RotaConhecimentosConteudo } from "@/app/hooks/useRotas"
 interface Props {
-    Id: number,
+    Id: string,
     Conteudo: string,
 }
 
