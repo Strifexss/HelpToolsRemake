@@ -22,6 +22,11 @@ export default function Main() {
 
     return (
         <div className="w-full h-full flex flex-col items-center gap-10 md:gap-8 overflow-y-scroll scrollbar-hide">
+            <section className="w-full flex justify-start items-center">
+                <h1 className="text-[white] font-bold text-[1.5rem]">
+                    Downloads
+                </h1>
+            </section>
             <section className="w-full h-full flex flex-col md:flex-row justify-between items-center">
                 <SearchBar/>
                 <section className="flex flex-row gap-6 items-center pt-4 md:pt-0">

@@ -4,20 +4,20 @@ import { Download, Library, LucideLibrary, Headphones, Book, Triangle, Home, Use
 import { UserModel } from "@/app/Models/UserModel"
 import ModalUSuario from "./ModalUsuario"
 import { useState } from "react"
-import { RotaHome, RotaSoftStore, RotaDownloads, RotaConhecimentos } from "@/app/hooks/useRotas"
+import { usePathname } from "next/navigation"
+import  PaginasDestacadas  from "../PaginasArray"
 
 export default function ButtonsSection() {
     
     const Usuario = new UserModel()
     const [showModal, setShowModal] = useState<boolean>(false)
+    const Router = usePathname()
+    console.log(Router)
 
     return(
         <section className="w-full h-full flex flex-col gap-4 2xl:gap-6">
             <section className="w-full gap-1">
-                <Buttons Click={RotaHome()} Conteudo="Inicio" hasBackground Icone={<Home color="white"/>} key={"Inicio"}/>
-                <Buttons Click={RotaDownloads()} Conteudo="Download" hasBackground Icone={<Download color="white"/>} key={"Download"}/>
-                <Buttons Click={RotaConhecimentos()} Conteudo="Conhecimento" hasBackground Icone={<Library color="white"/>} key={"Conhecimento"}/>
-                <Buttons Click={RotaSoftStore()} Conteudo="SoftStore" hasBackground Icone={<Store color="white"/>} key={"Conhecimento"}/>
+                <PaginasDestacadas />
             </section>
             <section className="w-full gap-1">
                 <Buttons Conteudo="Treinamento" Icone={<Triangle color="white"/>} key={"Treinamento"}/>
