@@ -2,11 +2,12 @@
 interface Props {
     Conteudo: string,
     Icone?: React.ReactNode,
+    InPage?: boolean,
     hasBackground?: boolean,
     Click?: () => void
 }
 
-export default function Buttons({Conteudo, Icone, hasBackground = false, Click}:Props) {
+export default function Buttons({InPage = false, Conteudo, Icone, hasBackground = false, Click}:Props) {
     return(
         <>
             <button onClick={Click} 
@@ -14,7 +15,7 @@ export default function Buttons({Conteudo, Icone, hasBackground = false, Click}:
                 {
                     Icone
                 }
-                <h1 className="md:text-[0.8rem] 2xl:text-[1rem] font-semibold">
+                <h1 className={`md:text-[0.8rem] 2xl:text-[1rem] font-semibold ${InPage ? "text-dourado" : "text-[white]"}`}>
                     {Conteudo}
                 </h1>
             </button>
