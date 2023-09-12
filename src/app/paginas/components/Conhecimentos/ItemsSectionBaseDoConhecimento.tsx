@@ -10,12 +10,14 @@ interface PropsItems {
 const Items:PropsItems[] = [{
     Nome: "Area Cliente",
     Conteudo: ["Teste1", "Teste2"],
+},{
+    Nome: "Area Cliente",
+    Conteudo: ["Teste1", "Teste2"],
 }]
 
 
 export default function ItemsSectionBaseDoConhecimento() {
 
-    const [teste, setTeste] = useState(false)
 
     return(
 
@@ -23,7 +25,7 @@ export default function ItemsSectionBaseDoConhecimento() {
             {
                 Items.map(x => {
                     return(
-                        <BaseDoConhecimentoItems Click={() => setTeste(!teste)} Menu = {teste} key={x.Nome} Nome={x.Nome} Conteudo={x.Conteudo}/>
+                        <BaseDoConhecimentoItems key={x.Nome} Nome={x.Nome} Conteudo={x.Conteudo}/>
                     )
                 })
             }

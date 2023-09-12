@@ -13,28 +13,28 @@ const ArrayDestacados = [
   {
     Conteudo: "Inicio",
     hasBackground: true,
-    Icone: <Home color="white" />,
+    Icone: <Home color={`${rotaNome === "/paginas/LandingPage" ? "orange" : "white"}`} />,
     Click: RotaHome(),
     InPage: rotaNome === "/paginas/LandingPage"
   },
   {
     Conteudo: "Download",
     hasBackground: true,
-    Icone: <Download color="white" />,
+    Icone: <Download color={`${rotaNome === "/paginas/Downloads" ? "orange" : "white"}`} />,
     Click: RotaDownloads(),
     InPage: rotaNome === "/paginas/Downloads"
   },
   {
     Conteudo: "Conhecimento",
     hasBackground: true,
-    Icone: <Library color="white" />,
+    Icone: <Library color={`${rotaNome === "/paginas/Conhecimentos" ? "orange" : "white"}`} />,
     Click: RotaConhecimentos(),
     InPage: rotaNome === "/paginas/Conhecimentos"
   },
   {
     Conteudo: "SoftStore",
     hasBackground: true,
-    Icone: <Store color="white" />,
+    Icone: <Store color={`${rotaNome === "/paginas/SoftStore" ? "orange" : "white"}`} />,
     Click: RotaSoftStore(),
     InPage: rotaNome === "/paginas/SoftStore"
   },
