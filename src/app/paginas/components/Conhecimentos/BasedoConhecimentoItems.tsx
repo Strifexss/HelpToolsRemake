@@ -1,4 +1,4 @@
-import { ArrowDownWideNarrow, ArrowUpWideNarrow } from "lucide-react";
+import { ArrowDownWideNarrow, ArrowUpWideNarrow, Folder } from "lucide-react";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -17,7 +17,8 @@ export default function BaseDoConhecimentoItems({ Nome, Conteudo }: Props) {
         onClick={() => setMenu(!Menu)}
         className="w-full hover:bg-padraoCinzaE bg-padraoCinzaC h-[4rem] flex justify-between items-center gap-8 px-10 cursor-pointer"
       >
-        <h1 className="text-[white] font-semibold">{Nome}</h1>
+        <Folder color="white"/>
+        <h1 className="text-[white] font-semibold text-center">{Nome}</h1>
         <motion.div
             initial={false}
             animate={{ rotate: Menu ? 360 : -360 }}
@@ -38,7 +39,7 @@ export default function BaseDoConhecimentoItems({ Nome, Conteudo }: Props) {
           >
             {Conteudo?.map((x) => {
               return (
-                <div key={x} className="w-full h-[4rem] bg-orangeButton flex justify-start items-center px-10 cursor-pointer">
+                <div key={x} className="w-full h-[4rem] bg-orangeButton flex justify-center items-center px-10 cursor-pointer">
                   <h1 className="text-[white] font-semibold">{x}</h1>
                 </div>
               );

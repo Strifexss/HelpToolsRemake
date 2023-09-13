@@ -1,29 +1,35 @@
 "use client"
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import BaseDoConhecimentoItems from "./BasedoConhecimentoItems";
-
-interface PropsItems {
-    Nome: string,
-    Conteudo: string[]
-}
-
-const Items:PropsItems[] = [{
-    Nome: "Area Cliente",
-    Conteudo: ["Teste1", "Teste2"],
-},{
-    Nome: "Area Cliente",
-    Conteudo: ["Teste1", "Teste2"],
-}]
+import useBaseConhecimentoData from "@/app/hooks/useBaseConhecimentoData";
+import IBaseConhecimento from "@/app/Models/IBaseConhecimento";
 
 
 export default function ItemsSectionBaseDoConhecimento() {
 
+    const [data, setData] = useState<IBaseConhecimento[] | null>(null)
+
+    useEffect(() => {
+
+        function LoadingData() {
+ 
+        try {
+            useBaseConhecimentoData().then(result => {
+                setData(result)
+            })
+        }
+        catch {
+            console.log("Não foi possivel carregar os dados")
+        }
+    }
+    LoadingData()
+    },[])
 
     return(
 
-        <div className="w-full h-full">
+        <div className="w-full h-full overflow-y-scroll scrollbar-hide">
             {
-                Items.map(x => {
+                data?.map(x => {
                     return(
                         <BaseDoConhecimentoItems key={x.Nome} Nome={x.Nome} Conteudo={x.Conteudo}/>
                     )

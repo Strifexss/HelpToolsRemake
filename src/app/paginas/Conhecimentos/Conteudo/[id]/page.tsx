@@ -10,7 +10,7 @@ export default function Conteudo() {
 
     
     return(
-      <div className="w-full h-full bg-padraoCinzaE p-4 md:px-52 2xl:px-96 2xl:py-6 ">
+      <div className="w-full h-full bg-padraoCinzaE p-4 md:px-40 2xl:px-40 2xl:py-6 ">
       <Main/>
       </div>
     )

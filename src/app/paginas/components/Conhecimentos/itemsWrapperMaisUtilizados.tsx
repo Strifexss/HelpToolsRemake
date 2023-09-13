@@ -11,7 +11,7 @@ export default function ItemsWrapperMaisUtilizados({Id, Conteudo}:Props) {
 
     return(
         <div onClick={() => Rota()} 
-            className="w-full h-[5rem] bg-padraoCinzaC hover:bg-padraoCinzaE transition-[0.1s] cursor-pointer flex items-center justify-start gap-20 px-8">
+            className="overflow-hidden w-full h-[5rem] bg-padraoCinzaC hover:bg-padraoCinzaE transition-[0.1s] cursor-pointer flex items-center justify-start gap-20 px-8">
         <h1 className="text-[white] font-semibold">
             {Id}
         </h1>
