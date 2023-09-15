@@ -26,7 +26,7 @@ function useRota(rota:string) {
     return useRota("/paginas/Conhecimentos")
   }
 
-  function RotaConhecimentosConteudo(id:string) {
+  function RotaConhecimentosConteudo(id:number) {
     return useRota(`/paginas/Conhecimentos/Conteudo/${id}`)
   }
 
