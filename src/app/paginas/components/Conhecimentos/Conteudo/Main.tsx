@@ -13,7 +13,7 @@ export default function Main() {
         const fetchData = async () => {
           try {
             const apiData = await FetchConhecimentosData();
-            const conhecimentoEncontrado = apiData.find(x => x.Faq === parametros.id);
+            const conhecimentoEncontrado = apiData.find(x => x.Faq === parseInt(parametros.id[0]));
             
             if (conhecimentoEncontrado !== undefined) {
               setData(conhecimentoEncontrado);
