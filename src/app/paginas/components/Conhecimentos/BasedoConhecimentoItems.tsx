@@ -35,11 +35,11 @@ export default function BaseDoConhecimentoItems({ Nome, Conteudo }: Props) {
             initial={{ y: "-2rem", opacity: 0 }} 
             animate={{ y: "0", opacity: 1 }} 
             exit={{ y: "-2rem", opacity: 0 }} 
-            transition={{ duration: 0.3 }}
+            transition={{ duration: 0.2 }}
           >
             {Conteudo?.map((x) => {
               return (
-                <div key={x} className="w-full h-[4rem] bg-orangeButton flex justify-center items-center px-10 cursor-pointer">
+                <div key={x} className="w-full h-[4rem] hover:bg-[orange] bg-orangeButton flex justify-center items-center px-10 cursor-pointer">
                   <h1 className="text-[white] font-semibold">{x}</h1>
                 </div>
               );
