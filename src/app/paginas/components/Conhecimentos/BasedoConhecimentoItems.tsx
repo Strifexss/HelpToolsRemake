@@ -23,6 +23,7 @@ export default function BaseDoConhecimentoItems({ Grupo, Conteudo, setDataSecond
   function Trocar(Grupo: string) {
     useFilterBaseDoConhecimento({SecondaryData, setDataSecondary, PrimaryData, Grupo})
   }
+  
   return (
     <section className="w-full h-auto flex flex-col">
       <div

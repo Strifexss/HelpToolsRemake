@@ -13,6 +13,13 @@ export default function Main() {
     const [DataPrimary, setDataPrimary] = useState<IConhecimentos[] | null>(null)
     const [DataSecondary, setDataSecondary] = useState<IConhecimentos[] |null>(null)
 
+    function handleTextChange (event: React.ChangeEvent<HTMLInputElement>) {
+      console.log(event.target.value)
+      const resultado = DataPrimary?.filter(x => x.Titulo.includes(event.target.value))
+      setDataSecondary(resultado ? resultado : null)
+    };
+     
+
     useEffect(() => {
         const fetchData = async () => {
           try {
@@ -33,7 +40,7 @@ export default function Main() {
     return(
         <div className="w-full h-full flex flex-col gap-6 overflow-y-scroll scrollbar-hide">
             <section className="w-full flex justify-between items-center">
-              <SearchBar/>
+              <SearchBar TextChange={handleTextChange}/>
               <ButtonDownload Conteudo="Limpar Filtro" click={LimparFiltro}/>
             </section>
             <section className="w-full h-full flex flex-col md:flex-row justify-center items-center gap-8">

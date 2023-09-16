@@ -7,8 +7,6 @@ export default function PaginasDestacadas()  {
 
 const rotaNome = usePathname()
 
-console.log(rotaNome)
-
 const ArrayDestacados = [
   {
     Conteudo: "Inicio",

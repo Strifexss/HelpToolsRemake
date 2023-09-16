@@ -11,8 +11,6 @@ export default function ButtonsSection() {
     
     const Usuario = new UserModel()
     const [showModal, setShowModal] = useState<boolean>(false)
-    const Router = usePathname()
-    console.log(Router)
 
     return(
         <section className="w-full h-full flex flex-col gap-4 2xl:gap-6">
