@@ -1,5 +1,5 @@
-import { urlBaseConhecimentos } from "../FakeApi's/ApiBaseConhecimento";
-import IBaseConhecimento from "../Models/IBaseConhecimento";
+import { urlBaseConhecimentos } from "../../FakeApi's/ApiBaseConhecimento";
+import IBaseConhecimento from "../../Models/IBaseConhecimento";
 import axios from "axios";
 
 export default function useBaseConhecimentoData():Promise<IBaseConhecimento[]> {

@@ -1,14 +1,44 @@
+"use client"
+import { useEffect, useState } from "react"
 import SearchBar from "../SoftStore/SearchBar"
 import BaseDoConhecimento from "./baseDoConhecimento"
 import WrapperMaisUtilizados from "./wrapperMaisUtilizados"
+import IConhecimentos from "@/app/Models/IConhecimentos"
+import FetchConhecimentosData from "@/app/hooks/Conhecimento/useConhecimentosData"
+import ButtonDownload from "../Donwloads/ButtonDownloads"
+import useClearFitlerBaseConhecimento from "@/app/hooks/Conhecimento/useClearFilterBaseConhecimento"
 
 export default function Main() {
+
+    const [DataPrimary, setDataPrimary] = useState<IConhecimentos[] | null>(null)
+    const [DataSecondary, setDataSecondary] = useState<IConhecimentos[] |null>(null)
+
+    useEffect(() => {
+        const fetchData = async () => {
+          try {
+            const apiData = await FetchConhecimentosData();
+            setDataPrimary(apiData);
+            setDataSecondary(apiData)
+            console.log(apiData);
+          } catch (error) {
+            console.error("Erro ao buscar dados da API:", error);
+          }
+        };
+    
+        fetchData();
+      }, []);
+
+      const LimparFiltro = () => useClearFitlerBaseConhecimento({ DataPrimary ,setDataSecondary})
+
     return(
         <div className="w-full h-full flex flex-col gap-6 overflow-y-scroll scrollbar-hide">
-            <SearchBar/>
+            <section className="w-full flex justify-between items-center">
+              <SearchBar/>
+              <ButtonDownload Conteudo="Limpar Filtro" click={LimparFiltro}/>
+            </section>
             <section className="w-full h-full flex flex-col md:flex-row justify-center items-center gap-8">
-                <WrapperMaisUtilizados/>
-                <BaseDoConhecimento/>
+                <WrapperMaisUtilizados DataSecondary={DataSecondary}/>
+                <BaseDoConhecimento PrimaryData={DataPrimary} SecondaryData={DataSecondary} setDataSecondary={setDataSecondary}/>
             </section>
         </div>
     )

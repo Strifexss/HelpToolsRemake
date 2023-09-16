@@ -1,5 +1,5 @@
 
 export default interface IBaseConhecimento {
-    Nome: string,
-    Conteudo: string[]
+    Grupo: string,
+    SubGrupo: string[]
 }

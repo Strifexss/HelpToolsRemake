@@ -2,26 +2,14 @@
 import { Star } from "lucide-react";
 import ItemsWrapperMaisUtilizados from "./itemsWrapperMaisUtilizados";
 import IConhecimentos from "@/app/Models/IConhecimentos";
-import FetchConhecimentosData from "@/app/hooks/useConhecimentosData";
+import FetchConhecimentosData from "@/app/hooks/Conhecimento/useConhecimentosData";
 import { useState, useEffect } from "react";
-export default function WrapperMaisUtilizados() {
 
-    const [Data, setData] = useState<IConhecimentos[] | null>(null)
+interface Props {
+  DataSecondary: IConhecimentos[] | null
+}
 
-    useEffect(() => {
-        const fetchData = async () => {
-          try {
-            const apiData = await FetchConhecimentosData();
-            setData(apiData);
-            console.log(apiData);
-          } catch (error) {
-            console.error("Erro ao buscar dados da API:", error);
-          }
-        };
-    
-        fetchData();
-      }, []);
-
+export default function WrapperMaisUtilizados({DataSecondary}:Props) {
 
     return(
         <div className="w-full md:w-[70%] h-[200rem] md:h-full bg-padraoCinzaSC flex flex-col overflow-hidden">
@@ -32,7 +20,7 @@ export default function WrapperMaisUtilizados() {
                     </h1>
                 </div>
                 {
-                Data?.map(x => {
+                DataSecondary?.map(x => {
                     return(
                         <ItemsWrapperMaisUtilizados key={x.Faq} Conteudo={x.Titulo} Id={x.Faq}/>
                     )

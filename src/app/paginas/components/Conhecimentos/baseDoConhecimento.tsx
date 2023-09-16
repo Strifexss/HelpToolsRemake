@@ -1,7 +1,15 @@
+import IConhecimentos from "@/app/Models/IConhecimentos";
 import BaseDoConhecimentoItems from "./BasedoConhecimentoItems"
 import ItemsSectionBaseDoConhecimento from "./ItemsSectionBaseDoConhecimento"
 
-export default function BaseDoConhecimento() {
+interface Props {
+    SecondaryData: IConhecimentos[] | null,
+    PrimaryData: IConhecimentos[] | null,
+    setDataSecondary: React.Dispatch<React.SetStateAction<IConhecimentos[] | null>>;
+}
+
+
+export default function BaseDoConhecimento({setDataSecondary, SecondaryData, PrimaryData}:Props) {
     return(
         <div className="w-full md:w-[40%] h-[200rem] md:h-full flex flex-col bg-padraoCinzaSC overflow-y-scroll scrollbar-hide">
             <section className="w-full h-[5rem] bg-dourado flex justify-center items-center">
@@ -9,7 +17,7 @@ export default function BaseDoConhecimento() {
                     Base do Conhecimento
                 </h1>
             </section>
-            <ItemsSectionBaseDoConhecimento/>
+            <ItemsSectionBaseDoConhecimento PrimaryData={PrimaryData} SecondaryData={SecondaryData} setDataSecondary={setDataSecondary}/>
         </div>
     )
 }

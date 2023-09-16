@@ -1,27 +1,27 @@
 import IBaseConhecimento from "../Models/IBaseConhecimento"
 
 const data:IBaseConhecimento[] = [{
-    Nome: "Area Cliente",
-    Conteudo: ["Alterações", "Boleto", "Dashboard", "Nfe", "Palm"],
+    Grupo: "Area Cliente",
+    SubGrupo: ["Alteracoes", "Boleto", "Dashboard", "Nfe", "Palm"],
 },{
-    Nome: "Area Cliente Softcom",
-    Conteudo: ["Alterações", "Aplicativos", "Banco de Dados", "Checar"],
+    Grupo: "Area Cliente Softcom",
+    SubGrupo: ["Alterações", "Aplicativos", "Banco de Dados", "Checar"],
 },
 {
-    Nome: "Area Contador",
-    Conteudo: ["Cadastros", "Softshop"],
+    Grupo: "Area Contador",
+    SubGrupo: ["Cadastros", "Softshop"],
 },
 {
-    Nome: "Atualizador de Objetos",
-    Conteudo: ["Aplicativos", "Banco de Dados"],
+    Grupo: "Atualizador de Objetos",
+    SubGrupo: ["Aplicativos", "Banco de Dados"],
 },
 {
-    Nome: "Comanda Eletrônica Android",
-    Conteudo: ["Restaurante"],
+    Grupo: "Comanda Eletrônica Android",
+    SubGrupo: ["Restaurante"],
 },
 {
-    Nome: "Diversos",
-    Conteudo: ["Nfce", "Palm", "Ped", "Ped Web", "Sped", "Externo"],
+    Grupo: "Diversos",
+    SubGrupo: ["Nfce", "Palm", "Ped", "Ped Web", "Sped", "Externo"],
 }]
 
 

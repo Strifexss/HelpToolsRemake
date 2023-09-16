@@ -1,16 +1,28 @@
+"use client"
 import { ArrowDownWideNarrow, ArrowUpWideNarrow, Folder } from "lucide-react";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import IConhecimentos from "@/app/Models/IConhecimentos";
+import useBaseConhecimentoData from "@/app/hooks/Conhecimento/useBaseConhecimentoData";
+import FetchConhecimentosData from "@/app/hooks/Conhecimento/useConhecimentosData";
+import useFilterBaseDoConhecimento from "@/app/hooks/Conhecimento/useFilterBaseConhecimento";
 
 interface Props {
-  Nome: string;
+  Grupo: string;
   Conteudo: string[];
+  SecondaryData: IConhecimentos[]  | null;
+  PrimaryData: IConhecimentos[]  | null;
+  setDataSecondary: React.Dispatch<React.SetStateAction<IConhecimentos[] | null>>;
+  
 }
 
-export default function BaseDoConhecimentoItems({ Nome, Conteudo }: Props) {
+export default function BaseDoConhecimentoItems({ Grupo, Conteudo, setDataSecondary, SecondaryData, PrimaryData }: Props) {
+
   const [Menu, setMenu] = useState(false);
 
-
+  function Trocar(Grupo: string) {
+    useFilterBaseDoConhecimento({SecondaryData, setDataSecondary, PrimaryData, Grupo})
+  }
   return (
     <section className="w-full h-auto flex flex-col">
       <div
@@ -18,7 +30,7 @@ export default function BaseDoConhecimentoItems({ Nome, Conteudo }: Props) {
         className="w-full hover:bg-padraoCinzaE bg-padraoCinzaC h-[4rem] flex justify-between items-center gap-8 px-10 cursor-pointer"
       >
         <Folder color="white"/>
-        <h1 className="text-[white] font-semibold text-center">{Nome}</h1>
+        <h1 className="text-[white] font-semibold text-center">{Grupo}</h1>
         <motion.div
             initial={false}
             animate={{ rotate: Menu ? 360 : -360 }}
@@ -39,7 +51,9 @@ export default function BaseDoConhecimentoItems({ Nome, Conteudo }: Props) {
           >
             {Conteudo?.map((x) => {
               return (
-                <div key={x} className="w-full h-[4rem] hover:bg-[orange] bg-orangeButton flex justify-center items-center px-10 cursor-pointer">
+                <div onClick={() => Trocar(x)}
+                  key={x} 
+                  className="w-full h-[4rem] hover:bg-[orange] bg-orangeButton flex justify-center items-center px-10 cursor-pointer">
                   <h1 className="text-[white] font-semibold">{x}</h1>
                 </div>
               );

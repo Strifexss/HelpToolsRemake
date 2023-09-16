@@ -1,6 +1,6 @@
 import axios from "axios";
-import { urlConhecimentos } from "../FakeApi's/ApiConhecimentos"; 
-import IConhecimentos from "../Models/IConhecimentos";
+import { urlConhecimentos } from "../../FakeApi's/ApiConhecimentos"; 
+import IConhecimentos from "../../Models/IConhecimentos";
 
 export default function FetchConhecimentosData(): Promise<IConhecimentos[]> {
   

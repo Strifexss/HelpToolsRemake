@@ -6,5 +6,7 @@ export default interface IConhecimentos {
     CriadoPor: string,
     ValidadoPor: string,
     Texto?: string[],
-    Image?: string[]
+    Image?: string[],
+    Grupo?: string,
+    Subgrupo?: string
 }

@@ -1,11 +1,17 @@
 "use client"
 import { useEffect, useState } from "react";
 import BaseDoConhecimentoItems from "./BasedoConhecimentoItems";
-import useBaseConhecimentoData from "@/app/hooks/useBaseConhecimentoData";
+import useBaseConhecimentoData from "@/app/hooks/Conhecimento/useBaseConhecimentoData";
 import IBaseConhecimento from "@/app/Models/IBaseConhecimento";
+import IConhecimentos from "@/app/Models/IConhecimentos";
 
+interface Props {
+    SecondaryData: IConhecimentos[] | null,
+    PrimaryData: IConhecimentos[] | null,
+    setDataSecondary: React.Dispatch<React.SetStateAction<IConhecimentos[] | null>>;
+}
 
-export default function ItemsSectionBaseDoConhecimento() {
+export default function ItemsSectionBaseDoConhecimento({setDataSecondary, SecondaryData, PrimaryData}:Props) {
 
     const [data, setData] = useState<IBaseConhecimento[] | null>(null)
 
@@ -31,7 +37,7 @@ export default function ItemsSectionBaseDoConhecimento() {
             {
                 data?.map(x => {
                     return(
-                        <BaseDoConhecimentoItems key={x.Nome} Nome={x.Nome} Conteudo={x.Conteudo}/>
+                        <BaseDoConhecimentoItems PrimaryData={PrimaryData} SecondaryData={SecondaryData} setDataSecondary={setDataSecondary} key={x.Grupo} Grupo={x.Grupo} Conteudo={x.SubGrupo}/>
                     )
                 })
             }

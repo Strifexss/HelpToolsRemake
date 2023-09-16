@@ -3,7 +3,7 @@ import { useParams } from "next/navigation"
 import { useState, useEffect } from "react"
 import IConhecimentos from "@/app/Models/IConhecimentos"
 import Descricao from "./Descricao"
-import FetchConhecimentosData from "@/app/hooks/useConhecimentosData"
+import FetchConhecimentosData from "@/app/hooks/Conhecimento/useConhecimentosData"
 export default function Main() {
 
     const [Data, setData] = useState<IConhecimentos | null>(null)

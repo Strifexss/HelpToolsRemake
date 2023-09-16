@@ -11,8 +11,9 @@ const data:IConhecimentos[] = [{
          "Causa: Preenchimento fiscal, Errado Preenchimento de cadastros errados",
          "Solução: Chamar apoio da supervisão: 1. Verificar o erro, e identificar que informação está faltando ou está errada.",
          "Lembrando que toda informação fiscal, como CST, CFOP, PIS, COFINS, entre outras, é obrigação da contabilidade informar ao cliente."
-    ]
-        
+    ],  
+    Grupo: "Area Cliente",
+    Subgrupo: "Alteracoes"
 },{
     Faq:  2,
     Prioridade: "Alta",
@@ -24,7 +25,10 @@ const data:IConhecimentos[] = [{
          ["Causa: Existe outra versão do access instalada ou não está conseguindo abrir automaticamente o sistema através de um caminho de rede",
          "Solução: Colocar o caminho do access no atalho, antes do caminho do banco de dados.",
          "Exemplo: C:\Program Files (x86)\Microsoft Office\OFFICE11\MSACCESS.EXE  C:\Sistema Padrão\SOFTSHOP.mdb COMO COMPACTAR E REPARAR O BANCO DE DADOS? Solução: Causa: GERALMENTE E PRECISO QUANDO O CLIENTE NAO CONSEGUE ABRIR O SISTEMA E APARECE UMA MENSAGEM FORMATO DE BANCO DE DADOS INVALIDO, OU NAO RECONHECIDO, CAUSADO POR QUEDAS DE ENERGIA, OSCILACAO DA REDE... Solução:",
-         "1- Abra o sistema em modo estrutura, vai no menu Ferramentas > Utilitários de Banco de Dados > Compactar e Reparar Banco de Dados 2 - Após Compactar o Banco, verifique se há algum registro corrompido ,se alguma tabela perdeu chave primária, se alguma tabela perdeu o indice e faça a correção 3-Verificar TABELAS, CADASTRO DE VENDAS, VENDAS EFETUADAS E BLOQUETES. Atenção: Em caso de reincidênciado chamado, deve ser escalonado o atendimento para o N2, para que seja analisado para uma solução definitiva."]
+         "1- Abra o sistema em modo estrutura, vai no menu Ferramentas > Utilitários de Banco de Dados > Compactar e Reparar Banco de Dados 2 - Após Compactar o Banco, verifique se há algum registro corrompido ,se alguma tabela perdeu chave primária, se alguma tabela perdeu o indice e faça a correção 3-Verificar TABELAS, CADASTRO DE VENDAS, VENDAS EFETUADAS E BLOQUETES. Atenção: Em caso de reincidênciado chamado, deve ser escalonado o atendimento para o N2, para que seja analisado para uma solução definitiva."
+        ],
+        Grupo: "Area Cliente Softcom",
+        Subgrupo: "Aplicativos"
     
         
 },{
@@ -40,7 +44,9 @@ const data:IConhecimentos[] = [{
         "1. Apresentar pra o cliente a Área do Cliente. Onde o mesmo vai poder assistir os vídeos de cadastro.",
         " 1.2 www.softcomtecnologia.com.br > Botão Área do Cliente. O cliente vai entrar com o Registro e o seu CNPJ",
         "Lembrando que ao apresentar a área do cliente você poderá abrir uma AP pra você"
-    ]
+    ],
+    Grupo: "Area Cliente Softcom",
+    Subgrupo: "Aplicativos"
 
 },{
     Faq: 4,
