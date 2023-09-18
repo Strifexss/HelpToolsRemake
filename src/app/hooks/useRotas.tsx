@@ -29,7 +29,16 @@ function useRota(rota:string) {
   function RotaConhecimentosConteudo(id:number) {
     return useRota(`/paginas/Conhecimentos/Conteudo/${id}`)
   }
+ 
+  function RotaDocumentacao() {
+    return useRota(`/paginas/Documentacao`)
+  }
+ 
+  function RotaTreinamento() {
+    return useRota(`/paginas/Treinamento`)
+  }
 
   export {
-    Deslogar, RotaHome, RotaSoftStore, RotaDownloads, RotaConhecimentos, RotaConhecimentosConteudo
+    Deslogar, RotaHome, RotaSoftStore, RotaDownloads, RotaConhecimentos, RotaConhecimentosConteudo, RotaDocumentacao,
+    RotaTreinamento
   }
