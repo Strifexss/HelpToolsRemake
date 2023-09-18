@@ -3,18 +3,28 @@ import ITreinamento from "../Models/ITreinamento";
 const APITreinamento:ITreinamento[] = [{
     Nome: "Vendas: Orçamentos, Notas Fiscais e Cupons Eletrônicos",
     conteudo: [
-        "Softshop: Autopeças - Orçamento",
-        "Softshop: Autopeças - Venda",
-        "Vendedores: Realize suas vendas atráves do SMobile"
+        {
+        nome:"Softshop: Autopeças - Orçamento",
+        Link: "https://www.youtube.com/embed/PgnCuLZZhig"
+    },
+    {
+        nome: "Softshop: Autopeças - Venda",
+        Link: "https://www.youtube.com/embed/j4M-jazeyw0"
+    }
+
     ]
 },
 {
     Nome: "Batismo Comercial",
     conteudo: [
-        "Segmento Farmácia",
-        "Conhecimento Fiscal",
-        "Segimento Alimentos",
-        "Segmentos Veículos"
+       {
+        nome: "Batismo Comercial - Segmento Farmacia",
+        Link: "https://www.youtube.com/embed/lpQhspw3FY4"
+       },
+       {
+        nome: "Batismo Comercial - Segmento Moda",
+        Link: "https://www.youtube.com/embed/yE4hve1KPJM"
+       }
     ]
 }
 ]
