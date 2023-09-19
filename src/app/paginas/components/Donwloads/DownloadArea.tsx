@@ -2,38 +2,20 @@
 import { useEffect, useState } from "react";
 import DownloadsItems from "./DownloadsItems";
 import FetchDataDownloads from "@/app/hooks/useDownloadData";
-import DownloadsData from "@/app/Models/IDownloads";
-import ModalsInfos from "./Modals/InfoModals";
 import IDownloads from "@/app/Models/IDownloads";
+import ModalsInfos from "./Modals/InfoModals";
 
 interface Props {
     handleInfoModal: React.Dispatch<React.SetStateAction<boolean>>;
-    ModalDataTransfer: React.Dispatch<React.SetStateAction<DownloadsData | null>>;
-    CheckedItems: React.Dispatch<React.SetStateAction<DownloadsData[] | null>>;
-    CheckedItemsArray: IDownloads[] | null
+    ModalDataTransfer: React.Dispatch<React.SetStateAction<IDownloads | null>>;
+    CheckedItems: React.Dispatch<React.SetStateAction<IDownloads[] | null>>;
+    CheckedItemsArray: IDownloads[] | null,
+    Data: IDownloads[] | null
 }
 
-export default function DownloadArea({handleInfoModal, ModalDataTransfer, CheckedItems, CheckedItemsArray}:Props){
+export default function DownloadArea({Data, handleInfoModal, ModalDataTransfer, CheckedItems, CheckedItemsArray}:Props){
 
-    const [data, setData] = useState<DownloadsData[] | null >(null)
-    
-    const [dataInfoModal, setDataInfoModal] = useState<DownloadsData | null>(null)
-
-
-    useEffect(() => {
-        const fetchData = async () => {
-          try {
-            const apiData = await FetchDataDownloads();
-            setData(apiData);
-            console.log(apiData);
-          } catch (error) {
-            console.error("Erro ao buscar dados da API:", error);
-          }
-        };
-    
-        fetchData();
-      }, []);
-
+   
 
     return(
         <section className="h-full 2xl:h-[90vh] w-full md:w-[65%] bg-padraoCinzaSC rounded-md flex flex-col">
@@ -51,7 +33,7 @@ export default function DownloadArea({handleInfoModal, ModalDataTransfer, Checke
         <h1 className="text-[white] font-semibold flex justify-center items-center">Personalizado</h1>
     </div>
     {
-        data?.map(x => {
+        Data?.map(x => {
             return(
                 <DownloadsItems CheckedItemsArray={CheckedItemsArray} CheckedItems={CheckedItems} ModalDataTransfer={ModalDataTransfer} handleInfoModal={handleInfoModal} key={x.id} id={x.id} nome={x.nome} Downloads={x.Downloads} Local={x.Local} tamanho={x.tamanho} versão={x.versão}/>
             )

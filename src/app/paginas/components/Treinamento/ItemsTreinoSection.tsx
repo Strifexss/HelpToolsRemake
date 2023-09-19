@@ -24,18 +24,20 @@ export default function ItemsTreinoSection({conteudo, Nome}:ITreinamento) {
                 Options &&
                 conteudo.map(x => {
                     return(
-                    <motion.div
-                    initial={{ y: "-2rem", opacity: 0 }} 
-                    animate={{ y: "0", opacity: 1 }} 
-                    exit={{ y: "-2rem", opacity: 0 }} 
-                    transition={{ duration: 0.25 }} 
-                    key={x.nome} className="w-full h-[5rem] cursor-pointer bg-dourado hover:bg-amareloPadrao flex px-8 justify-start items-center">
-                        <Link href={x.Link} target="_blank">
-                        <h1 className="text-[white] font-semibold">
-                            {x.nome}
-                        </h1>
-                        </Link>
-                    </motion.div>
+                    <Link key={x.nome} href={x.Link} target="_blank">
+                        <motion.div
+                        initial={{ y: "-2rem", opacity: 0 }} 
+                        animate={{ y: "0", opacity: 1 }} 
+                        exit={{ y: "-2rem", opacity: 0 }} 
+                        transition={{ duration: 0.25 }} 
+                        className="w-full h-[5rem] cursor-pointer bg-dourado hover:bg-amareloPadrao flex px-8 justify-start items-center">
+                        
+                            <h1 className="text-[white] font-semibold">
+                                {x.nome}
+                            </h1>
+                        
+                        </motion.div>
+                    </Link>
                     )
                 })
                 

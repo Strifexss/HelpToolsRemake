@@ -19,7 +19,7 @@ export default function Main() {
           Sua jornada rumo ao próximo nível está apenas começando!
         </h1>
       </section>
-      <section className="w-full flex flex-row justify-center gap-8 md:gap-16 2xl:gap-16 flex-wrap">
+      <section className="w-full flex flex-row justify-center gap-8 md:gap-16 2xl:gap-12 flex-wrap">
         <CarouselImg/>
         <Grafico Tipo='bar'/>
         <Grafico Tipo='doughnut'/>

@@ -4,14 +4,15 @@ interface Props {
     Icone?: React.ReactNode,
     InPage?: boolean,
     hasBackground?: boolean,
-    Click?: () => void
+    Click?: () => void,
+    BackgroundOrange?: boolean
 }
 
-export default function Buttons({InPage = false, Conteudo, Icone, hasBackground = false, Click}:Props) {
+export default function Buttons({BackgroundOrange = false,InPage = false, Conteudo, Icone, hasBackground = false, Click}:Props) {
     return(
         <>
             <button onClick={Click} 
-                className={`w-full h-[2.5rem] md:h-[2rem] 2xl:h-[2.5rem] mt-4 ${hasBackground && "bg-padraoCinzaSC"}  hover:bg-padraoCinzaE rounded-md text-[white]  flex justify-start items-center gap-4 px-2`}>
+                className={`w-full h-[2.5rem] md:h-[2rem] 2xl:h-[2.5rem] mt-4 ${hasBackground && "bg-padraoCinzaSC"} ${BackgroundOrange && "bg-dourado"}  ${BackgroundOrange ? "hover:bg-amareloPadrao" : "hover:bg-padraoCinzaE"} rounded-md text-[white]  flex justify-start items-center gap-4 px-2`}>
                 {
                     Icone
                 }
