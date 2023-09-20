@@ -37,8 +37,12 @@ function useRota(rota:string) {
   function RotaTreinamento() {
     return useRota(`/paginas/Treinamento`)
   }
+ 
+  function RotaSuporteComercial() {
+    return useRota(`/paginas/SuporteComercial`)
+  }
 
   export {
     Deslogar, RotaHome, RotaSoftStore, RotaDownloads, RotaConhecimentos, RotaConhecimentosConteudo, RotaDocumentacao,
-    RotaTreinamento
+    RotaTreinamento, RotaSuporteComercial
   }
