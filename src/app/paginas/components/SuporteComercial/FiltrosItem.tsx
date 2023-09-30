@@ -1,3 +1,4 @@
+import ISuporteComercial from "@/app/Models/ISuporteComercial";
 import { useState } from "react";
 
 interface Regiao {
@@ -6,15 +7,30 @@ interface Regiao {
 }
 
 interface Props {
-    Tipo: "Any" | "Regiao"
+    Tipo?: "Segmento" | "Regiao" | "Cidades"
     TextoPrincipal: string,
     Opcoes?: string[] | null,
     OpcoesRegiao?: Regiao[],
+    OpcoesSegmentoPrimary?: ISuporteComercial[] | null,
+    OpcoesSegmentoSecondary?: ISuporteComercial[] | null,
     setCidade?: React.Dispatch<React.SetStateAction<string[] | null>>;
+    setSegmentos?: React.Dispatch<React.SetStateAction<ISuporteComercial[] | null>>;
 }
 
-export default function FiltroItem({TextoPrincipal, Opcoes, Tipo, OpcoesRegiao, setCidade}:Props) {
+export default function FiltroItem({OpcoesSegmentoPrimary, setSegmentos, TextoPrincipal, Opcoes, Tipo, OpcoesRegiao, setCidade}:Props) {
 
+    function handleTextosChange(event: React.ChangeEvent<HTMLSelectElement>) {
+        const selectedTexto = event.target.value
+        console.log(selectedTexto)
+        console.log(OpcoesSegmentoPrimary)
+        const segmentosFiltrados = 
+            OpcoesSegmentoPrimary?.filter(Segmento => Segmento.Segmento === selectedTexto) || []
+            console.log(segmentosFiltrados)
+    
+        if (setSegmentos) {
+            setSegmentos(segmentosFiltrados)
+        }
+    }
 
     function handleRegiaoChange(event: React.ChangeEvent<HTMLSelectElement>) {
         const selectedRegiao = event.target.value;
@@ -24,7 +40,7 @@ export default function FiltroItem({TextoPrincipal, Opcoes, Tipo, OpcoesRegiao, 
         const cidadesFiltradas =
           OpcoesRegiao?.find((item) => item.Estado === selectedRegiao)?.Cidades || [];
         console.log(cidadesFiltradas)
-        // Agora, mesmo que setCidade seja null, não haverá um erro
+
         console.log(setCidade)
         if (setCidade) {
           setCidade(cidadesFiltradas);
@@ -37,8 +53,8 @@ export default function FiltroItem({TextoPrincipal, Opcoes, Tipo, OpcoesRegiao, 
             {TextoPrincipal}
         </h1>
         <section>
-            <select onChange={handleRegiaoChange} className="w-[10rem] bg-padraoCinzaC text-[white] font-semibold p-1">
-                {   Tipo === "Any"?
+            <select onChange={Tipo == "Regiao" ? handleRegiaoChange : handleTextosChange} className="w-[10rem] bg-padraoCinzaC text-[white] font-semibold p-1">
+                {   Tipo === "Segmento" || Tipo === "Cidades"?
                     Opcoes?.map(Opcoes => {
                         return(
                             <option key={Opcoes}

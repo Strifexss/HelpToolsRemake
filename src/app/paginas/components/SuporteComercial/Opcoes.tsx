@@ -5,10 +5,7 @@ interface Regiao {
 
 const Segmento:string[] = [
     "Alimentos",
-    "Camisaria",
-    "Construção",
-    "Combústivel",
-    "Vidraceiro"
+    "Angiologista"
 ]
 
 const Regiao:Regiao[] = [

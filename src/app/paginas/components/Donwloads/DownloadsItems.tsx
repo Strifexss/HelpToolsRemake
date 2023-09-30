@@ -1,7 +1,7 @@
 import { Download, Info } from "lucide-react"
 import Link from "next/link"
 import IDownloads from "@/app/Models/IDownloads"
-import {useState, useEffect} from "react"
+import {useState} from "react"
 
 interface Props extends IDownloads {
     handleInfoModal: React.Dispatch<React.SetStateAction<boolean>>;
