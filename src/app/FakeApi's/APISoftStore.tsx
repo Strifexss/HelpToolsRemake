@@ -1,61 +1,36 @@
 import ISoftStoreData from "../Models/SoftStoreData"
-import { Logo, Banner } from "../imgs/imgExport"
+import { CamisaAmerela, GarrafaTermica, Moletom,  } from "../imgs/SoftStoreImgs"
 
 const data:ISoftStoreData[] = [{
     nome: "Moletom",
     preco: 2500.00,
     type: "Roupa",
-    image: Banner.src
+    image: Moletom.src
 },
 {
     nome: "Camisa",
     preco: 1300.00,
     type: "Roupa",
-    image: Banner.src
+    image: CamisaAmerela.src
 },
 {
     nome: "Boné",
     preco: 400.00,
     type: "Roupa",
-    image: Banner.src
+    image: CamisaAmerela.src
 },
 {
     nome: "Caneca",
     preco: 100.00,
     type: "Item",
-    image: Logo.src
-},
-{
-    nome: "Garrafa",
-    preco: 600,
-    type: "Item",
-    image: Logo.src
+    image: CamisaAmerela.src
 },
 {
     nome: "Garrafa Inteligente",
-    preco: 900,
+    preco: 600,
     type: "Item",
-    image: Logo.src
+    image: GarrafaTermica.src
 },
-{
-    nome: "Calça",
-    preco: 100.00,
-    type: "Roupa",
-    image: Logo.src
-},
-{
-    nome: "Calça",
-    preco: 100.00,
-    type: "Roupa",
-    image: Logo.src
-},
-{
-    nome: "Calça",
-    preco: 100.00,
-    type: "Roupa",
-    image: Logo.src
-},
-
 ]
 
 const JsonData = JSON.stringify(data)

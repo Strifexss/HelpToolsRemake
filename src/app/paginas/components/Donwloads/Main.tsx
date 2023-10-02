@@ -10,9 +10,11 @@ import IDownloads from "@/app/Models/IDownloads"
 import ModalDownloadPersonalizado from "./Modals/ModalDownloadPersonalizado"
 import FetchDataDownloads from "@/app/hooks/useDownloadData"
 import useFilterDownload from "@/app/hooks/Download/useFIlterDownloadData"
+import AdicioarGrupo from "./Modals/AdicionarGrupo"
 export default function Main() {
 
     const [showInfoModal, setShowInfoModal] = useState(false)
+    const [showAdicionarGrupoModal, setShowAdicionarGrupoModal] = useState(false)
     const [modalDataInfo, setModalDataInfo] = useState<IDownloads | null>(null)
     const [checkedItems, setCheckedItems] = useState<IDownloads[] | null>([])
     const [DownloadPersonalizadoModal, setDownloadPersonalizadoModal] = useState(false)
@@ -54,7 +56,7 @@ export default function Main() {
                 <SearchBar TextChange={handleTextChange}/>
                 <section className="flex flex-row gap-6 items-center pt-4 md:pt-0">
                     <ButtonDownload click={() => setDownloadPersonalizadoModal(true)} Conteudo="Donwload Personalizado"/>
-                    <ButtonDownload Conteudo="Criar Novo Grupo"/>
+                    <ButtonDownload click={() => setShowAdicionarGrupoModal(!showAdicionarGrupoModal)} Conteudo="Criar Novo Grupo"/>
                 </section>
             </section>
             <div className="w-full h-full flex flex-col md:flex-row gap-8">
@@ -66,6 +68,9 @@ export default function Main() {
             }
             { showInfoModal &&
                 <ModalsInfos ModalData={modalDataInfo} handleInfoModal={setShowInfoModal}/> 
+            }
+            { showAdicionarGrupoModal &&
+                <AdicioarGrupo CloseModal={setShowAdicionarGrupoModal}/>
             }
         </div>
     )

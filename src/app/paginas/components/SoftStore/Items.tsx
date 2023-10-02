@@ -34,14 +34,16 @@ export default function Items({setValor, valorNumero, nome, preco, type, image}:
 
 
     return(
-        <div className=" w-[100%] h-[20rem] md:w-[15rem] 2xl:h-[18rem] bg-padraoCinzaC flex flex-col cursor-pointer">
-            <Image className="w-full h-[70%]"
+        <div className=" w-[100%] h-[30rem] md:h-auto md:w-[15rem] 2xl:h-[25rem]  bg-padraoCinzaC hover:bg-padraoCinzaE flex flex-col cursor-pointer">
+            <section className="w-full h-[70%] p-4 flex justify-center items-center">
+            <Image className="w-full h-full"
                 src={image}
                 alt="Imagem"
                 width={1000}
                 height={1000}
             />
-            <section className="w-full h-full flex flex-col p-4 gap-2 justify-center">
+            </section>
+            <section className="w-full h-auto flex flex-col p-4 gap-2 justify-center">
                 <h1 className="text-[white] font-semibold">{nome}</h1>
                 <h1 className="text-[gray] text-[0.8rem] font-semibold">{type}</h1>
                 <section className="w-full flex flex-row justify-between items-center">

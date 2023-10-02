@@ -14,7 +14,7 @@ export default function ItemsTreinoSection({conteudo, Nome}:ITreinamento) {
             <section onClick={() => setOptions(!Options)} 
             className="flex px-8 w-full h-[5rem] bg-padraoCinzaC hover:bg-padraoCinzaE cursor-pointer">
                 <div className="flex flex-row gap-4 items-center">
-                    <Video color="white"/>
+                    <Video color="white" className="min-h-[1.5rem] min-w-[1.5rem]"/>
                     <h1 className="text-[white] font-semibold">
                         {Nome}
                     </h1>
