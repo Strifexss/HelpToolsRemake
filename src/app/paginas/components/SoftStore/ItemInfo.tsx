@@ -16,9 +16,9 @@ export default function InfoModal(Props:Props) {
     return(
         <motion.div
             initial={{ opacity: 0, scale: 0.8, y: -50 }}
-            animate={{ opacity: 1, scale: 1, y: isMobile ? 0 : 80 }}
+            animate={{ opacity: 1, scale: 1, y: isMobile ? 0 : 20 }}
             transition={{duration: 0.2}} 
-            className="absolute w-full h-full md:w-[25rem] md:h-[75%] bg-padraoCinzaSC md:translate-y-[5rem] flex flex-col overflow-y-scroll scrollbar-hide">
+            className="absolute w-screen h-screen md:w-[25rem] md:h-[90%] bg-padraoCinzaSC md:translate-y-[5rem] flex flex-col overflow-y-scroll scrollbar-hide">
                 <section className="w-full h-[10%] bg-dourado flex justify-end p-4 items-center">
                     <X color="white" className="cursor-pointer" onClick={() => Props.Close(false)}/>
                 </section>
