@@ -1,17 +1,17 @@
 "use client"
 
-import { Banner } from "@/app/imgs/imgExport"
 import Image from "next/image"
 import { ArrowLeft, ArrowRight } from "lucide-react"
-import { useState } from "react"
+import { SetStateAction, useState } from "react"
 import ISoftStoreData from "@/app/Models/SoftStoreData"
 
 interface Props extends ISoftStoreData {
     setValor: React.Dispatch<React.SetStateAction<number>>;
     valorNumero: number,
+    HandleInfoModal: React.Dispatch<SetStateAction<boolean>>
 }
 
-export default function Items({setValor, valorNumero, nome, preco, type, image}:Props) {
+export default function Items({HandleInfoModal, setValor, valorNumero, nome, preco, type, image}:Props) {
 
     const [quantidade, setQuantidade] = useState<number>(0)
 
@@ -35,7 +35,8 @@ export default function Items({setValor, valorNumero, nome, preco, type, image}:
 
     return(
         <div className=" w-[100%] h-[30rem] md:h-auto md:w-[15rem] 2xl:h-[25rem]  bg-padraoCinzaC hover:bg-padraoCinzaE flex flex-col cursor-pointer">
-            <section className="w-full h-[70%] p-4 flex justify-center items-center">
+            <section onClick={() => HandleInfoModal(true) }
+            className="w-full h-[70%] p-4 flex justify-center items-center">
             <Image className="w-full h-full"
                 src={image}
                 alt="Imagem"

@@ -1,5 +1,6 @@
 import Aside from "./components/layout/aside"
 import Mobile from "./components/layout/mobile"
+
 export default function RootLayout({
     children,
   }: {
