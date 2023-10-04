@@ -1,5 +1,5 @@
 import ISoftStoreData from "../Models/SoftStoreData"
-import { CamisaAmerela, GarrafaTermica, Moletom,  } from "../imgs/SoftStoreImgs"
+import { Bone, CamisaAmerela, Caneca, GarrafaTermica, Moletom,  } from "../imgs/SoftStoreImgs"
 
 const data:ISoftStoreData[] = [{
     nome: "Moletom",
@@ -17,13 +17,13 @@ const data:ISoftStoreData[] = [{
     nome: "Boné",
     preco: 400.00,
     type: "Roupa",
-    image: CamisaAmerela.src
+    image: Bone.src
 },
 {
     nome: "Caneca",
     preco: 100.00,
     type: "Item",
-    image: CamisaAmerela.src
+    image: Caneca.src
 },
 {
     nome: "Garrafa Inteligente",

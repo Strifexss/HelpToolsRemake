@@ -1,20 +1,48 @@
+import Item from "./BuyModalComponents/Item"
+import Header from "./BuyModalComponents/Header"
+import {motion} from "framer-motion"
+import { useMediaQuery } from "react-responsive";
+
 interface Props {
     clickCancelar: () => void
 }
 
 export default function BuyModal({clickCancelar}:Props) {
+
+    const isMobile = useMediaQuery({ maxWidth: 640 });
+
     return(
-        <div className=" flex flex-col gap-4 w-[90%] md:w-[20rem] h-[80%] md:h-[30rem] bg-padraoCinzaSC absolute border-[orange] border-[2px] p-8 rounded-xl">
-            <div className="w-full h-[70%] bg-padraoCinzaC rounded-xl p-4 overflow-scroll scrollbar-hide">
-                <h1 className="text-[white]">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fuga, reprehenderit? Distinctio nisi praesentium temporibus quod molestiae quidem quia deleniti explicabo aliquid, nesciunt, totam odio? Rerum maiores quos quidem quam provident?</h1>
+    <motion.div
+    initial={{ opacity: 0, scale: 0.8, y: -50 }}
+    animate={{ opacity: 1, scale: 1, y: isMobile ? 0 : 70 }}
+    transition={{duration: 0.2}} 
+    className=" w-screen h-screen md:w-[45rem] md:h-auto bg-padraoCinzaSC absolute flex flex-col">
+       <Header clickCancelar={clickCancelar}/>
+        <div className="w-full h-full p-6 flex flex-col gap-4">
+            <div className="h-[70%] w-full flex flex-col gap-2">
+                <Item/>
+                <Item/>
+                <Item/>
+                <Item/>
+                <Item/>
             </div>
-            <button onClick={clickCancelar} 
-                className="w-full h-[3rem] bg-[white] rounded-xl text-[black] font-bold">
-                <h1>Cancelar</h1>
-            </button>
-            <button className="w-full h-[3rem] bg-[orange] rounded-xl text-[white] font-bold">
-                <h1>Comprar</h1>
-            </button>
+            <div className="h-[30%] border-t-[1px] border-t-CinzaPadrao w-full flex flex-col items-end justify-center gap-4">
+                <section className="w-full flex flex-col items-end justify-center mt-2">
+                    <h1 className="bg-dourado text-[white] p-2 font-bold">
+                        Total: $999,99
+                    </h1>
+                </section>
+                <section className="w-full flex justify-end items-center gap-2">
+                    <button onClick={clickCancelar} 
+                    className="p-2 bg-CinzaPadrao text-[white] font-semibold">
+                        Voltar a SoftStore
+                    </button>
+                    <button className="p-2 bg-dourado text-[white] font-semibold">
+                        Comprar
+                    </button>
+                </section>
+            </div>
         </div>
+    </motion.div>
     )
 }

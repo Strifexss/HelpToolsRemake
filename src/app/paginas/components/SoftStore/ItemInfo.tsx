@@ -1,16 +1,19 @@
 import { CamisaAmerela } from "@/app/imgs/SoftStoreImgs";
 import { X } from "lucide-react";
 import Image from "next/image";
-import { SetStateAction } from "react";
+import { SetStateAction, useState } from "react";
 import {motion} from "framer-motion"
 import { useMediaQuery } from 'react-responsive';
+import ISoftStoreData from "@/app/Models/SoftStoreData";
 
 interface Props {
+    Data: ISoftStoreData | null
     Close: React.Dispatch<SetStateAction<boolean>>
 }
 
 export default function InfoModal(Props:Props) {
 
+    
     const isMobile = useMediaQuery({ maxWidth: 640 });
 
     return(
@@ -24,21 +27,21 @@ export default function InfoModal(Props:Props) {
                 </section>
                 <section className="w-full h-[50%] p-6">
                     <Image
-                        src={CamisaAmerela}
-                        alt="Camisa Amarela"
+                        src={Props.Data?.image ? Props.Data.image : CamisaAmerela}
+                        alt={Props.Data?.nome ? Props.Data?.nome : "Item"}
                         width={1000}
                         height={1000}             
                     />
                 </section>
                 <section className="w-full h-auto rounded-t-[3rem] bg-padraoCinzaC flex flex-col py-4 px-6 gap-2">
                     <h1 className="font-bold text-[white] text-[1.5rem]">
-                        Camisa Amarela
+                        {Props.Data?.nome}
                     </h1>
                     <p className="text-[#707070] font-semibold">
-                        Roupa
+                    {Props.Data?.type}
                     </p>
                     <p className="text-dourado font-semibold">
-                        R$ 1300
+                    {Props.Data?.preco}
                     </p>
                 </section>
                 <section className="w-full h-auto flex justify-center px-6 bg-padraoCinzaC">

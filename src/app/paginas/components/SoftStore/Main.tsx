@@ -9,12 +9,14 @@ import {X} from "lucide-react"
 import Image from "next/image"
 import { CamisaAmerela } from "@/app/imgs/SoftStoreImgs"
 import InfoModal from "./ItemInfo"
+import ISoftStoreData from "@/app/Models/SoftStoreData"
 
 export default function Main() {
 
     const [valor, setValor] = useState<number>(0)
     const [comprarModal, setComprarModal] = useState<boolean>(false)
     const [openInfoModal, setOpenInfoModal] = useState(false)
+    const [dataInfoModal, setDataInfoModal] = useState<ISoftStoreData | null>(null)
 
     function handleModalBuy() {
         setComprarModal(!comprarModal)
@@ -30,7 +32,7 @@ export default function Main() {
                 <SearchBar/>
                 <WalletBuy click={() => handleModalBuy()} valor={valor}/>
             </section>
-            <ItemsSpace HandleInfoModal={setOpenInfoModal} valor={setValor} valorNumero={valor}/>
+            <ItemsSpace Data={dataInfoModal} HandleInfoModalData={setDataInfoModal} HandleInfoModal={setOpenInfoModal} valor={setValor} valorNumero={valor}/>
             <section className=" w-full flex items-end justify-center">
             </section> 
             {
@@ -38,7 +40,7 @@ export default function Main() {
                 <BuyModal clickCancelar={() => handleModalBuy()}/>
             }    
             {   openInfoModal &&
-                <InfoModal Close={setOpenInfoModal}/>
+                <InfoModal Data={dataInfoModal} Close={setOpenInfoModal}/>
             }   
         </div>
     )

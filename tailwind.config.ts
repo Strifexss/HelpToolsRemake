@@ -23,7 +23,8 @@ const config: Config = {
       "padraoCinzaSC": "#1F2437",
       "dourado": "#F28D19",
       "blueButton": "#4476F9",
-      "orangeButton": "#FB8B03"
+      "orangeButton": "#FB8B03",
+      "CinzaPadrao": "#707070"
     }
   },
   plugins: [require('tailwind-scrollbar-hide')],
