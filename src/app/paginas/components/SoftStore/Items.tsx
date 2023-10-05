@@ -3,15 +3,16 @@
 import Image from "next/image"
 import { ArrowLeft, ArrowRight } from "lucide-react"
 import { SetStateAction, useState } from "react"
-import ISoftStoreData from "@/app/Models/SoftStoreData"
 import { CamisaAmerela } from "@/app/imgs/SoftStoreImgs"
+import Valor from "@/app/Models/IBUYsoftstoreData"
+import ICarrinho from "@/app/Models/ICarrinho"
+import ISoftStoreData from "@/app/Models/SoftStoreData"
 
 interface Props {
-    setValor: React.Dispatch<React.SetStateAction<number>>;
-    valorNumero: number,
+    setValor: React.Dispatch<React.SetStateAction<ICarrinho | null>>;
     HandleInfoModal: React.Dispatch<SetStateAction<boolean>>,
-    HandleInfoModalData: React.Dispatch<SetStateAction<ISoftStoreData | null>>,
-    Data: ISoftStoreData | null
+    HandleInfoModalData: React.Dispatch<SetStateAction<Valor | null>>,
+    Data: Valor | null
 }
 
 export default function Items(Props:Props) {
@@ -20,23 +21,67 @@ export default function Items(Props:Props) {
 
 
     function aumentarQuantidade() {
-        setQuantidade(quantidade + 1)
-        const Preco = Props.Data?.preco ? Props.Data.preco : 1
-        Props.setValor(Props.valorNumero + Preco)
-    }
+        setQuantidade(quantidade + 1);
 
+        const newItem: ISoftStoreData = {
+            nome: Props.Data?.nome ? Props.Data.nome : "",
+            type: Props.Data?.type ? Props.Data.type : "",
+            image: Props.Data?.image ? Props.Data.image : "",
+            preco: Props.Data?.preco ? Props.Data.preco : 0
+        }
+
+        Props.setValor(prevState => {
+            const updatedItems = (prevState?.Items || []).map(item => {
+                if (item.nome === newItem.nome) {
+                    return { ...item, quantidade: (item.quantidade || 1) + 1 };
+                }
+                return item;
+            });
+
+            if (!updatedItems.find(item => item.nome === newItem.nome)) {
+                updatedItems.push({ ...newItem, quantidade: 1 });
+            }
+
+            return {
+                ...prevState,
+                ValorTotal: (prevState?.ValorTotal || 0) + newItem.preco,
+                Items: updatedItems
+            };
+        });
+    }
 
     function diminuirQuantidade() {
-        if(quantidade == 0) {
-            setQuantidade(0)
-        }
-        else {
-            setQuantidade(quantidade - 1)
-            const Preco = Props.Data?.preco ? Props.Data.preco : 1
-            Props.setValor(Props.valorNumero - Preco)
+        if (quantidade > 0) {
+            setQuantidade(quantidade - 1);
+    
+            const newItem: ISoftStoreData = {
+                nome: Props.Data?.nome ? Props.Data.nome : "",
+                type: Props.Data?.type ? Props.Data.type : "",
+                image: Props.Data?.image ? Props.Data.image : "",
+                preco: Props.Data?.preco ? Props.Data.preco : 0
+            }
+    
+            Props.setValor(prevState => {
+                const updatedItems = (prevState?.Items || []).map(item => {
+                    if (item.nome === newItem.nome) {
+                        const newQuantidade = (item.quantidade || 0) - 1;
+                        if (newQuantidade <= 0) {
+                            // Retorna null para indicar a remoção do item
+                            return null;
+                        }
+                        return { ...item, quantidade: newQuantidade };
+                    }
+                    return item;
+                }).filter(Boolean) as ISoftStoreData[]; // Filtra e converte para o tipo correto
+    
+                return {
+                    ...prevState,
+                    ValorTotal: (prevState?.ValorTotal || 0) - newItem.preco,
+                    Items: updatedItems
+                };
+            });
         }
     }
-
     function HandleData() {
         Props.HandleInfoModalData(Props.Data)
         Props.HandleInfoModal(true)

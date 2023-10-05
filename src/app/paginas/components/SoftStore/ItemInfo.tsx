@@ -41,7 +41,7 @@ export default function InfoModal(Props:Props) {
                     {Props.Data?.type}
                     </p>
                     <p className="text-dourado font-semibold">
-                    {Props.Data?.preco}
+                     ${Props.Data?.preco}
                     </p>
                 </section>
                 <section className="w-full h-auto flex justify-center px-6 bg-padraoCinzaC">

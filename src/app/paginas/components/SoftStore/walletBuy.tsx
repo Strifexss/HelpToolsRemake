@@ -1,7 +1,8 @@
+import Valor from "@/app/Models/IBUYsoftstoreData"
 import { ShoppingCart, Wallet } from "lucide-react"
 
 interface Props {
-    valor:number,
+    valor: number,
     click: () => void
 }
 

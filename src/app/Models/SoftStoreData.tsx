@@ -4,5 +4,6 @@ export default interface ISoftStoreData{
     nome: string,
     type: string,
     image: string,
-    preco: number
+    preco: number,
+    quantidade?: number
 }
