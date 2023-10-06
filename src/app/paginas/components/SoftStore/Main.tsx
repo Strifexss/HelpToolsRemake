@@ -12,15 +12,17 @@ import InfoModal from "./ItemInfo"
 import ISoftStoreData from "@/app/Models/SoftStoreData"
 import Valor from "@/app/Models/IBUYsoftstoreData"
 import ICarrinho from "@/app/Models/ICarrinho"
+import ConfirmBuyModalComponent from "./ConfirmBuyModal"
 
 
 export default function Main() {
 
-    const [valor, setValor] = useState<Valor | null>(null)
     const [comprarModal, setComprarModal] = useState<boolean>(false)
     const [openInfoModal, setOpenInfoModal] = useState(false)
     const [dataInfoModal, setDataInfoModal] = useState<Valor | null>(null)
     const [Carrinho, setCarrinho] = useState<ICarrinho | null>(null)
+    const [valorCarteira, setValorCarteira] = useState(500000)
+    const [ConfirmBuyModal, setConfirmBuyModal] = useState(false) 
 
     function handleModalBuy() {
         setComprarModal(!comprarModal)
@@ -34,18 +36,21 @@ export default function Main() {
             </section>
             <section className="w-full flex flex-col md:flex-row items-center justify-around">
                 <SearchBar/>
-                <WalletBuy click={() => handleModalBuy()} valor={Carrinho?.ValorTotal ? Carrinho?.ValorTotal : 0}/>
+                <WalletBuy click={() => handleModalBuy()} valor={Carrinho?.ValorTotal ? Carrinho?.ValorTotal : 0} valorCarteira={valorCarteira}/>
             </section>
             <ItemsSpace Data={dataInfoModal} HandleInfoModalData={setDataInfoModal} HandleInfoModal={setOpenInfoModal} valor={setCarrinho}/>
             <section className=" w-full flex items-end justify-center">
             </section> 
             {
                 comprarModal &&
-                <BuyModal Items={Carrinho} clickCancelar={() => handleModalBuy()}/>
+                <BuyModal openConfirmBuyModal={setConfirmBuyModal} valorCarteira={valorCarteira} Items={Carrinho} clickCancelar={() => handleModalBuy()}/>
             }    
             {   openInfoModal &&
                 <InfoModal Data={dataInfoModal} Close={setOpenInfoModal}/>
-            }   
+            }
+            { ConfirmBuyModal &&
+                <ConfirmBuyModalComponent setCarrinho={setCarrinho} ItemsValorTotal={Carrinho} setCarteira={setValorCarteira} setConfirmBuyModal={setConfirmBuyModal}/>
+            }
         </div>
     )
 }
