@@ -15,9 +15,10 @@ interface Props {
     OpcoesSegmentoSecondary?: ISuporteComercial[] | null,
     setCidade?: React.Dispatch<React.SetStateAction<string[] | null>>;
     setSegmentos?: React.Dispatch<React.SetStateAction<ISuporteComercial[] | null>>;
+    TextoSegmento: string
 }
 
-export default function FiltroItem({OpcoesSegmentoPrimary, setSegmentos, TextoPrincipal, Opcoes, Tipo, OpcoesRegiao, setCidade}:Props) {
+export default function FiltroItem({TextoSegmento, OpcoesSegmentoPrimary, setSegmentos, TextoPrincipal, Opcoes, Tipo, OpcoesRegiao, setCidade}:Props) {
 
     function handleTextosChange(event: React.ChangeEvent<HTMLSelectElement>) {
         const selectedTexto = event.target.value
@@ -78,7 +79,7 @@ export default function FiltroItem({OpcoesSegmentoPrimary, setSegmentos, TextoPr
             </select>
         </section>
         <h1 className="text-dourado font-semibold">
-            Neste Segmento hoje nós temos: 655 Clientes
+            {TextoSegmento}
         </h1>
     </section>
     )

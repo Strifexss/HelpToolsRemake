@@ -39,9 +39,13 @@ export default function Wrapper({headerTexto, Conteudo, hasDate = false, hasIcon
                       {  Conteudo?.map(x => {
                     return(
                         <div key={x.Texto} className="border-b-[white] border-b-2 w-full h-[4rem] bg-padraoCinzaSC cursor-pointer flex flex-row justify-center items-center p-4 gap-6">
+                                <Link href={x.Links ? x.Links : ""}
+                                target="_blank"
+                                >
                                 <h1 className="text-[white] text-center font-semibold">
                                     {x.Texto}
                                 </h1>
+                                </Link>
                         </div>
                     )
                 })}
@@ -51,9 +55,12 @@ export default function Wrapper({headerTexto, Conteudo, hasDate = false, hasIcon
                         {  Conteudo?.map(x => {
                     return(
                         <div key={x.Texto} className="border-b-[white] border-b-2 w-full h-[4rem] bg-padraoCinzaSC cursor-pointer flex flex-row justify-center items-center p-4 gap-6">
+                                <Link href={x.Links ? x.Links : ""}
+                                target="_blank">
                                 <h1 className="text-[white] text-center font-semibold">
                                     {x.data}
                                 </h1>
+                                </Link>
                         </div>
                     )
                 })}

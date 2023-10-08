@@ -36,7 +36,7 @@ export default function Main() {
                 </h1>
             </section>
             <Filtros OpcoesSegmentoPrimary={dataSegmentosPrimary} setSegmentos={setDataSegmentosSecondary}/>
-            <WrapperTextos Conteudo={dataSegmentosSecondary && dataSegmentosSecondary[0].PontosFortes} Titulo="Pontos Fortes"/>
+            <WrapperTextos  Conteudo={dataSegmentosSecondary && dataSegmentosSecondary[0].PontosFortes} Titulo="Pontos Fortes"/>
             <WrapperTextos Conteudo={dataSegmentosSecondary && dataSegmentosSecondary[0].RoteiroDemo} Titulo="Roteiro Demo"/>
             <WrapperTextos Conteudo={dataSegmentosSecondary && dataSegmentosSecondary[0].MaterialDeApoio} Titulo="Material de Apoio"/>
         </div>

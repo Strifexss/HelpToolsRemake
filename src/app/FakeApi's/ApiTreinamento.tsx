@@ -26,7 +26,34 @@ const APITreinamento:ITreinamento[] = [{
         Link: "https://www.youtube.com/embed/yE4hve1KPJM"
        }
     ]
+},
+{
+    Nome: "Aprenda a gerenciar o financeiro",
+    conteudo: [{
+        nome: "Contas a pagar",
+        Link: "https://www.youtube.com/embed/C-RODmg7fn8"
+    },
+    {
+        nome: "contas a receber",
+        Link: "https://www.youtube.com/embed/IDffyx9cBuw"
+    },
+    {
+        nome: "Conciliador de Cartões",
+        Link: "https://www.youtube.com/embed/mqXSwRiTlGM"
+    }]
+},
+{
+    Nome: "Para o seu contador",
+    conteudo: [{
+        nome: "Inventário",
+        Link: "https://www.youtube.com/embed/UJslc0jpGik"
+    },
+    {
+        nome: "Enviando Xml para o seu contador",
+        Link: "https://www.youtube.com/embed/UJslc0jpGik"
+    }]
 }
+    
 ]
 
 const JsonData = JSON.stringify(APITreinamento)

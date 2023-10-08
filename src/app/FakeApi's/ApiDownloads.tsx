@@ -43,13 +43,6 @@ const data:DownloadsData[] = [{
     tamanho: 0,
     versão: "2014 SP3"
 },{
-    id: 7,
-    Downloads: 12,
-    nome: "Emissor NFe",
-    Local: "\\goku\matrizes$\Emissores\NFe\SetupNFe.rar",
-    tamanho: 28210247,
-    versão: "9.7.6.0"
-},{
     id: 8,
     Downloads: 123,
     nome: "Elgin i9 e i7 Drivers",
@@ -63,35 +56,40 @@ const data:DownloadsData[] = [{
     Local: "\\goku\matrizes$\SOFTSHOP\DAV\LIB\QRCodeSetup.rar",
     tamanho: 0,
     versão: "1.2.1"
-},{
-    id: 7,
-    Downloads: 12,
-    nome: "Emissor NFe",
-    Local: "\\goku\matrizes$\Emissores\NFe\SetupNFe.rar",
-    tamanho: 28210247,
-    versão: "9.7.6.0"
-},{
-    id: 7,
-    Downloads: 12,
-    nome: "Emissor NFe",
-    Local: "\\goku\matrizes$\Emissores\NFe\SetupNFe.rar",
-    tamanho: 28210247,
-    versão: "9.7.6.0"
-},{
-    id: 7,
-    Downloads: 12,
-    nome: "Emissor NFe",
-    Local: "\\goku\matrizes$\Emissores\NFe\SetupNFe.rar",
-    tamanho: 28210247,
-    versão: "9.7.6.0"
-},{
-    id: 7,
-    Downloads: 12,
-    nome: "Emissor NFe",
-    Local: "\\goku\matrizes$\Emissores\NFe\SetupNFe.rar",
-    tamanho: 28210247,
-    versão: "9.7.6.0"
-},]
+},
+{
+    id: 10,
+    Downloads: 46,
+    nome: "Ammyy Admin",
+    Local: "\\goku\executaveis$\AMMYY\Remoto_Ammy.exe",
+    tamanho: 0,
+    versão: "3.50"
+},
+{
+    id: 11,
+    Downloads: 9513,
+    nome: "Driver PinPad Gertec",
+    Local: "\\goku\matrizes$\TEF\DRIVERS PINPAD\Driver GERTEC.rar",
+    tamanho: 5078486,
+    versão: "0"
+},
+{
+    id: 12,
+    Downloads: 9866,
+    nome: "SPED .Net",
+    Local: "\\goku\matrizes$\SPED .Net\SPED_.Net.rar",
+    tamanho: 5365412,
+    versão: "7.18.0.0"
+},
+{
+    id: 13,
+    Downloads: 7934,
+    nome: "Assistente",
+    Local: "\\goku\ftp$\rubens.teixeira\Assistente.exe",
+    tamanho: 19456,
+    versão: "1.2.1"
+}
+]
 
 const JsonData = JSON.stringify(data)
 

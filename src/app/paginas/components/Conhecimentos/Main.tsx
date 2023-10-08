@@ -39,7 +39,10 @@ export default function Main() {
 
     return(
         <div className="w-full h-full flex flex-col gap-6 overflow-y-scroll scrollbar-hide">
-            <section className="w-full flex justify-between items-center">
+            <h1 className="text-[white] font-bold text-[1.5rem]">
+              Conhecimentos
+            </h1>
+            <section className="w-full flex-col gap-2 flex md:flex-row justify-between items-center">
               <SearchBar TextChange={handleTextChange}/>
               <ButtonDownload Conteudo="Limpar Filtro" click={LimparFiltro}/>
             </section>

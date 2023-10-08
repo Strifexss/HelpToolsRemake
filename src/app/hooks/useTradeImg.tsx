@@ -5,9 +5,10 @@ interface Elementos {
   Image: StaticImageData;
   textoPrincipal: string;
   textoSecundario: string;
+  Links: string
 }
 
-export default function useTradeImg(Props: Elementos[]) {
+function useTradeImg(Props: Elementos[]) {
   const [data, setData] = useState<Elementos>(Props[0]);
   const [mudar, setMudar] = useState<number>(0);
 
@@ -28,4 +29,8 @@ export default function useTradeImg(Props: Elementos[]) {
   return {
     data,
   };
+}
+
+export {
+  useTradeImg
 }
