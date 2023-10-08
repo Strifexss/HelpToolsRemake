@@ -38,15 +38,16 @@ export default function Wrapper({headerTexto, Conteudo, hasDate = false, hasIcon
                         <h1 className="w-full text-center text-[white] font-bold border-b-[white] border-b-2">Produto</h1>
                       {  Conteudo?.map(x => {
                     return(
-                        <div key={x.Texto} className="border-b-[white] border-b-2 w-full h-[4rem] bg-padraoCinzaSC cursor-pointer flex flex-row justify-center items-center p-4 gap-6">
-                                <Link href={x.Links ? x.Links : ""}
+                        <Link className="w-full" 
+                        key={x.Texto} href={x.Links ? x.Links : ""}
                                 target="_blank"
                                 >
-                                <h1 className="text-[white] text-center font-semibold">
-                                    {x.Texto}
-                                </h1>
-                                </Link>
-                        </div>
+                            <div  className="border-b-[white] border-b-2 w-full h-[4rem] bg-padraoCinzaSC cursor-pointer flex flex-row justify-center items-center p-4 gap-6">
+                                    <h1 className="text-[white] text-center font-semibold">
+                                        {x.Texto}
+                                    </h1>
+                            </div>
+                        </Link>
                     )
                 })}
                     </div>
@@ -54,14 +55,14 @@ export default function Wrapper({headerTexto, Conteudo, hasDate = false, hasIcon
                         <h1 className="w-full text-center text-[white] font-bold border-b-[white] border-b-2">Previsão</h1>
                         {  Conteudo?.map(x => {
                     return(
-                        <div key={x.Texto} className="border-b-[white] border-b-2 w-full h-[4rem] bg-padraoCinzaSC cursor-pointer flex flex-row justify-center items-center p-4 gap-6">
-                                <Link href={x.Links ? x.Links : ""}
-                                target="_blank">
-                                <h1 className="text-[white] text-center font-semibold">
-                                    {x.data}
-                                </h1>
-                                </Link>
-                        </div>
+                        <Link key={x.Texto} className="w-full" href={x.Links ? x.Links : ""}
+                        target="_blank">
+                            <div  className="border-b-[white] border-b-2 w-full h-[4rem] bg-padraoCinzaSC cursor-pointer flex flex-row justify-center items-center p-4 gap-6">
+                                    <h1 className="text-[white] text-center font-semibold">
+                                        {x.data}
+                                    </h1>
+                            </div>
+                        </Link>
                     )
                 })}
                     </div>

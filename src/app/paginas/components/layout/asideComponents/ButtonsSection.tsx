@@ -6,7 +6,7 @@ import ModalUSuario from "./ModalUsuario"
 import { useState } from "react"
 import { usePathname } from "next/navigation"
 import  PaginasDestacadas  from "../PaginasArray"
-import { RotaDocumentacao, RotaSuporteComercial, RotaTreinamento } from "@/app/hooks/useRotas"
+import { RotaDocumentacao, RotaSuporteComercial, RotaTreinamento, ChatSupervisao } from "@/app/hooks/useRotas"
 
 export default function ButtonsSection() {
     
@@ -16,7 +16,7 @@ export default function ButtonsSection() {
     const RotaDocumento = RotaDocumentacao()
     const RotaTreino = RotaTreinamento()
     const RotaSuportecomercial = RotaSuporteComercial()
-
+    const RotaChat = ChatSupervisao()
     return(
         <section className="w-full h-full flex flex-col gap-4 2xl:gap-6">
             <section className="w-full gap-1">
@@ -26,7 +26,7 @@ export default function ButtonsSection() {
                 <Buttons Click={() => RotaTreino()} Conteudo="Treinamento" Icone={<Triangle color="white"/>} key={"Treinamento"}/>
                 <Buttons Click={() => RotaDocumento()} Conteudo="Documentação" Icone={<Book color="white"/>} key={"Documentação"}/>
                 <Buttons Click={() => RotaSuportecomercial()} Conteudo="SuporteComercial" Icone={<Headphones color="white"/>} key={"SuporteComercial"}/>
-                <Buttons Conteudo="Chat Supervisão" Icone={<Library color="white"/>} key={"Chat Supervisão"}/>
+                <Buttons Click={() => RotaChat()} Conteudo="Chat Supervisão" Icone={<Library color="white"/>} key={"Chat Supervisão"}/>
             </section>
             <section className="w-full h-full flex flex-col justify-end items-center">
                 { showModal &&
