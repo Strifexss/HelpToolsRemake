@@ -1,6 +1,19 @@
+import IDonwloadGrupos from "@/app/Models/IDownloadGrupos"
 import GruposItems from "./GruposItems"
+import { SetStateAction, useState } from "react"
+import { ItemsGrupos } from "./ItemsGrupos/ItemsGrupos"
 
-export default function Grupos() {
+interface Props {
+    Items: IDonwloadGrupos[] | [],
+    setItems: React.Dispatch<SetStateAction<IDonwloadGrupos[] | []>>,
+    setInfosModalItemsGrupos: React.Dispatch<SetStateAction<IDonwloadGrupos>>,
+    OpenItemsGrupos: React.Dispatch<SetStateAction<boolean>>,
+}
+
+export default function Grupos(Props:Props) {
+
+    
+
     return(
         <section className="w-full md:w-[35%] h-[50%] flex flex-col">
             <section className="w-full h-full bg-padraoCinzaSC flex flex-col scrollbar-hide rounded-md">
@@ -10,10 +23,13 @@ export default function Grupos() {
                     </h1>
                 </div>
                 <section className="w-full h-full flex flex-col">
-                    <GruposItems conteudo="Start"/>  
-                    <GruposItems conteudo="Basic"/>  
-                    <GruposItems conteudo="Plus"/>  
-                    <GruposItems conteudo="Prime"/>  
+                    {
+                        Props.Items.map(x => {
+                            return(
+                                <GruposItems setInfosModalItemsGrupos={Props.setInfosModalItemsGrupos} OpenItemsGrupos={Props.OpenItemsGrupos} key={x.nome} Conteudo={x}/>
+                            )
+                        })
+                    }
                 </section>
             </section>
         </section>
