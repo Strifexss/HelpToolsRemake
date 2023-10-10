@@ -1,5 +1,6 @@
 import IDonwloadGrupos from "@/app/Models/IDownloadGrupos"
 import {X, Trash2} from "lucide-react"
+import {motion} from "framer-motion"
 import { SetStateAction, useState } from "react"
 
 interface Props {
@@ -20,7 +21,11 @@ export default function InfosGrupoModal(Props: Props) {
     }
 
     return(
-        <div className="w-[20rem] h-[25rem] bg-padraoCinzaSC border-dourado border-2 absolute translate-y-40 flex flex-col gap-6 p-6 items-center">
+        <motion.div 
+        initial={{ opacity: 0, scale: 0.8, x: -150 }}
+        animate={{ opacity: 1, scale: 1, x: 0, y:120 }}
+        transition={{duration: 0.2}}
+        className="w-[20rem] h-[25rem] bg-padraoCinzaSC border-dourado border-2 absolute translate-y-40 flex flex-col gap-6 p-6 items-center">
         <section className="w-full flex justify-between">
             <h1 className="text-[white] font-semibold">
                 <h1>{Props.Dados.nome}</h1>
@@ -63,6 +68,6 @@ export default function InfosGrupoModal(Props: Props) {
             </section>
         </div>
         }
-    </div>
+    </motion.div>
     )
 }

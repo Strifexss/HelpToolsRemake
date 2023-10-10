@@ -1,4 +1,5 @@
 import IDownloads from "@/app/Models/IDownloads"
+import {motion} from "framer-motion"
 
 interface Props{
     items: IDownloads[] | null,
@@ -12,7 +13,11 @@ export default function ModalDownloadPersonalizado({items, ClickCancelar}:Props)
     }
 
     return(
-        <div className="bg-padraoCinzaE w-[90vw] h-[60vh] md:w-[30rem] md:h-[30rem] absolute p-8 flex flex-col gap-8 border-dourado border-[2px]  2xl:translate-y-[7rem]">
+        <motion.div 
+        initial={{ opacity: 0, scale: 0.8, y: -50 }}
+        animate={{ opacity: 1, scale: 1, y: 120 }}
+        transition={{duration: 0.2}}
+        className="bg-padraoCinzaE w-[90vw] h-[60vh] md:w-[30rem] md:h-[30rem] absolute p-8 flex flex-col gap-8 border-dourado border-[2px]  2xl:translate-y-[7rem]">
             <div className="text-[white] text-[1.2rem] font-semibold flex justify-center items-center text-center">
                 <h1>
                     Deseja Baixar os seguintes items?
@@ -42,6 +47,6 @@ export default function ModalDownloadPersonalizado({items, ClickCancelar}:Props)
                     Cancelar
                 </button>
             </section>
-        </div>
+        </motion.div>
     )
 }
