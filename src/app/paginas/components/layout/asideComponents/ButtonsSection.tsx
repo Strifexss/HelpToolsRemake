@@ -6,7 +6,11 @@ import ModalUSuario from "./ModalUsuario"
 import { useState } from "react"
 import  PaginasDestacadas  from "../PaginasArray"
 
-export default function ButtonsSection() {
+interface Props {
+    show: boolean
+}
+
+export default function ButtonsSection(Props:Props) {
     
     const Usuario = new UserModel()
     const [showModal, setShowModal] = useState<boolean>(false)
@@ -14,13 +18,13 @@ export default function ButtonsSection() {
     return(
         <section className="w-full h-full flex flex-col gap-4 2xl:gap-6">
             <section className="w-full gap-1">
-                <PaginasDestacadas />
+                <PaginasDestacadas show={Props.show}/>
             </section>
             <section className="w-full h-full flex flex-col justify-end items-center">
                 { showModal &&
-                    <ModalUSuario/>
+                    <ModalUSuario show={Props.show}/>
                 }
-                <Buttons Click={() => setShowModal(!showModal)} 
+                <Buttons show={Props.show} Click={() => setShowModal(!showModal)} 
                 Conteudo={`Olá ${Usuario.getName()}! `} BackgroundOrange Icone={<User2 color="white"/>} key={"Usuario"}/>
             </section>
         </section>

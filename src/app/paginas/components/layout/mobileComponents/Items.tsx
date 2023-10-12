@@ -11,7 +11,7 @@ export default function Items() {
 
     return(
         <div className="w-full h-full mt-16">
-          <ButtonsSection/>
+          <ButtonsSection show/>
         </div>
     )
 }

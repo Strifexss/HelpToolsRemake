@@ -3,7 +3,11 @@ import { RotaConhecimentos, RotaDownloads, RotaHome, RotaSoftStore, RotaTreiname
 import Buttons from "./asideComponents/Buttons";
 import {usePathname} from "next/navigation"
 
-export default function PaginasDestacadas()  {
+interface Props {
+  show: boolean
+}
+
+export default function PaginasDestacadas(Props:Props)  {
 
 const rotaNome = usePathname()
 
@@ -71,13 +75,14 @@ return (
 <section className="w-full flex flex-col gap-1">
   {ArrayDestacados.map((x) => {
     return (
-      <Buttons
+      <Buttons 
         key={x.Conteudo}
         Conteudo={x.Conteudo}
         Click={() => x.Click()}
         Icone={x.Icone}
         hasBackground={x.hasBackground}
         InPage = {x.InPage}
+        show={Props.show}
       />
     );
   })}
