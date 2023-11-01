@@ -23,7 +23,7 @@ export default function GruposItems(Props:Props) {
                 color="orange"/>
             </div>
             <div className="h-full flex justify-center items-center">
-                <h1 className="text-[white] font-semibold">
+                <h1 className="text-[white] text-[0.8rem] font-semibold">
                     {Props.Conteudo.nome}
                 </h1>
             </div>

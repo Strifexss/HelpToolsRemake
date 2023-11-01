@@ -49,7 +49,7 @@ export default function FiltroItem({TextoSegmento, OpcoesSegmentoPrimary, setSeg
       }
 
     return(
-        <section className="h-full flex flex-col md:grid grid-cols-3 p-2 md:px-2  justify-items-center items-start md:items-center gap-4 bg-padraoCinzaSC rounded-md">
+        <section className="h-full flex flex-col md:grid grid-cols-3 p-2 md:px-2 text-[0.8rem]  justify-items-center items-start md:items-center gap-4 bg-padraoCinzaSC rounded-md">
         <h1 className="text-[white] font-semibold">
             {TextoPrincipal}
         </h1>

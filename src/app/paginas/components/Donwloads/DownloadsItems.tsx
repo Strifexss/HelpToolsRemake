@@ -38,7 +38,7 @@ export default function DownloadsItems({Downloads, Local, id, nome, tamanho, ver
       
       
     return(
-        <div className="w-full h-[4rem] bg-padraoCinzaC  hover:bg-padraoCinzaE grid grid-cols-3 md:grid-cols-5 px-2 cursor-pointer">
+        <div className="w-full h-[4rem] bg-padraoCinzaC text-[0.8rem]  hover:bg-padraoCinzaE grid grid-cols-3 md:grid-cols-5 px-2 cursor-pointer">
             <section className="w-full h-full flex justify-center items-center">
                 <Link href={"http://177.43.232.3:10000/helptools2/public/arquivo"} target="_blank">
                     <Download color="orange"/>

@@ -17,7 +17,7 @@ export default function Grafico({ Tipo }: Props) {
 
     if (chartInstance) {
       // Atualize o gráfico existente em vez de criar um novo
-      chartInstance.data.datasets[0].data = [12, 19, 3, 5, 2, 3, 10];
+      chartInstance.data.datasets[0].data = [12, 19, 3, 5, 2, 3];
       chartInstance.update(); // Atualize o gráfico
       return;
     }
@@ -26,18 +26,31 @@ export default function Grafico({ Tipo }: Props) {
     ctx.canvas.width = ctx.canvas.clientWidth * 0.4; // 40% da largura
     ctx.canvas.height = 450; // 30rem de altura
 
+    
+
     const newChart = new Chart(ctx, {
       type: Tipo,
       data: {
-        labels: ['Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sabado', 'Domingo'],
+        labels: ['Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sabado'],
         datasets: [{
           label: 'Ocorrências',
-          data: [12, 19, 3, 5, 2, 3, 10],
-          borderWidth: 3,
+          data: [12, 19, 3, 5, 2, 3],
+          borderWidth: 2,
           backgroundColor: ['orange', '#55BCC9'],
         }],
       },
       options: {
+        plugins: {
+          legend: {
+              align: 'center',
+                labels: {
+                    font: {
+                        size: 11 // Defina o tamanho da fonte das legendas
+                    },
+                }
+          },
+          
+      },
         scales: {
           y: {
             beginAtZero: true,
@@ -64,7 +77,7 @@ export default function Grafico({ Tipo }: Props) {
   }, [createChart]);
 
   return (
-    <div className='w-full md:w-[40%] 2xl:w-[30%] h-[20rem] 2xl:h-[25rem]'>
+    <div className='w-full md:w-[40%] 2xl:w-[30%] h-[20rem] 2xl:h-[20rem]'>
       <canvas
         id="grafico"
         ref={chartContainerRef}

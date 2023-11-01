@@ -31,7 +31,7 @@ export default function BaseDoConhecimentoItems({ Grupo, Conteudo, setDataSecond
         className="w-full hover:bg-padraoCinzaE bg-padraoCinzaC h-[4rem] flex justify-between items-center gap-8 px-10 cursor-pointer"
       >
         <Folder color="white"/>
-        <h1 className="text-[white] font-semibold text-center">{Grupo}</h1>
+        <h1 className="text-[white] font-semibold text-center text-[0.8rem]">{Grupo}</h1>
         <motion.div
             initial={false}
             animate={{ rotate: Menu ? 360 : -360 }}
@@ -55,7 +55,7 @@ export default function BaseDoConhecimentoItems({ Grupo, Conteudo, setDataSecond
                 <div onClick={() => Trocar(x)}
                   key={x} 
                   className="w-full h-[4rem] hover:bg-[orange] bg-orangeButton flex justify-center items-center px-10 cursor-pointer">
-                  <h1 className="text-[white] font-semibold">{x}</h1>
+                  <h1 className="text-[white] font-semibold text-[0.8rem]">{x}</h1>
                 </div>
               );
             })}

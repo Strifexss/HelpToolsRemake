@@ -13,7 +13,7 @@ export default function TreinoSection({Data}:Props) {
     return(
         <div className="w-full h-[80%] bg-padraoCinzaSC flex flex-col">
         <div className="w-full h-[5rem] bg-dourado flex justify-center items-center">
-            <h1 className="text-[white] text-[1.5rem] font-bold">
+            <h1 className="text-[white] text-[1.2rem] font-bold">
                 Treinamentos
             </h1>
         </div>
