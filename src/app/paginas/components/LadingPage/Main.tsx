@@ -21,8 +21,8 @@ export default function Main() {
       </section>
       <section className="w-full flex flex-row justify-center gap-8 md:gap-16 2xl:gap-12 2xl:gap-y-4 flex-wrap">
         <CarouselImg/>
-        <Grafico Tipo='bar'/>
-        <Grafico Tipo='doughnut'/>
+        <Grafico positionLabel='top' Tipo='bar'/>
+        <Grafico positionLabel='right' Tipo='doughnut'/>
         <Wrapper hasIcon Conteudo={ConteudoWrapper} headerTexto="Ultimos Vídeos" />
         <Wrapper hasDate  Conteudo={LiberacoesConteudo} headerTexto="Liberações" />
         <Wrapper headerTexto="Comunicados Fiscais" />

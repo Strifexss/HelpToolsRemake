@@ -3,9 +3,10 @@ import Chart from 'chart.js/auto';
 
 interface Props {
   Tipo: "bar" | "doughnut" | "pie";
+  positionLabel: "top" | "bottom" | "right" | "left"
 }
 
-export default function Grafico({ Tipo }: Props) {
+export default function Grafico({ Tipo, positionLabel }: Props) {
   const [chartInstance, setChartInstance] = useState<Chart<"bar" | "doughnut" | "pie", number[], string> | null>(null);
   const chartContainerRef = useRef<HTMLCanvasElement | null>(null);
 
@@ -42,6 +43,7 @@ export default function Grafico({ Tipo }: Props) {
       options: {
         plugins: {
           legend: {
+              position: positionLabel,
               align: 'center',
                 labels: {
                     font: {

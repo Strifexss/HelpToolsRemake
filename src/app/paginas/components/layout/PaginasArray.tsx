@@ -34,13 +34,6 @@ const ArrayDestacados = [
     InPage: rotaNome === "/paginas/Conhecimentos"
   },
   {
-    Conteudo: "SoftStore",
-    hasBackground: true,
-    Icone: <Store color={`${rotaNome === "/paginas/SoftStore" ? "orange" : "white"}`} />,
-    Click: RotaSoftStore(),
-    InPage: rotaNome === "/paginas/SoftStore"
-  },
-  {
     Conteudo: "Treinamento",
     hasBackground: false,
     Icone: <Triangle color={`${rotaNome === "/paginas/Treinamento" ? "orange" : "white"}`} />,

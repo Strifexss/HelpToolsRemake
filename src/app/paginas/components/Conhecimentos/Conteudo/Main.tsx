@@ -33,7 +33,7 @@ export default function Main() {
       console.log(parametros.id);
 
     return(
-        <div className="w-full h-auto md:h-full flex flex-col gap-8">
+        <div className="w-full h-auto md:h-full flex flex-col gap-8 text-[0.8rem]">
             <header className="w-full flex flex-row justify-start gap-2">
                 <Link href={"/paginas/Conhecimentos"}>
                     <h1 className="text-[gray] hover:text-[white]">

@@ -6,7 +6,7 @@ export default function Documentacao() {
     const RotaInicio = RotaHome()
 
     return(
-        <div className="w-full h-full flex flex-col justify-center items-center ">
+        <div className="w-full h-full flex flex-col justify-center items-center text-[0.8rem]">
             <h1 className="text-[white] text-[2rem] font-bold">
                 Acesso Restrito
             </h1>
