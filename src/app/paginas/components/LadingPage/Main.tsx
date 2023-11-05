@@ -11,7 +11,7 @@ export default function Main() {
   const Usuario = new UserModel();
  
   return (
-    <div className="w-full h-full flex flex-col overflow-y-scroll scrollbar-hide gap-16">
+    <div className="w-full h-full flex flex-col overflow-y-scroll scrollbar-hide gap-8">
       <section className="w-full flex flex-col md:flex-row justify-start items-center gap-4">
         <h1 className="text-[white] text-[1.5rem] md:text-[1.5rem] 2xl:text-[2rem] font-bold">
           Seja bem vindo {Usuario.getName()}!
