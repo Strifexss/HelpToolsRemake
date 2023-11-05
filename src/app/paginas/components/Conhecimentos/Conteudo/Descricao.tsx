@@ -9,8 +9,8 @@ export default function Descricao({Data}:Props) {
 
     return(
         <div className="w-full h-auto md:h-full bg-padraoCinzaSC flex flex-col rounded-md md:overflow-y-scroll scrollbar-hide">
-        <div className="w-full h-[5rem] bg-dourado flex justify-center items-center rounded-t-md">
-            <h1 className="font-semibold text-[white] text-[1.5rem]">
+        <div className="w-full h-[5rem] md:h-[3.5rem] 2xl:h-[5rem] bg-dourado flex justify-center items-center rounded-t-md">
+            <h1 className="font-semibold text-[white] text-[1.5rem] md:text-[1rem] 2xl:text-[1.5rem]">
                 Descrição
             </h1>
         </div>

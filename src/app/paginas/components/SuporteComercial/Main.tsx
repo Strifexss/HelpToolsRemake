@@ -29,9 +29,9 @@ export default function Main() {
     }, [])
 
     return(
-        <div className="w-full h-full flex flex-col gap-4 overflow-y-scroll scrollbar-hide">
+        <div className="w-full h-full flex flex-col gap-4 overflow-y-scroll scrollbar-hide text-[0.8rem] md:text-[0.6rem] 2xl:text-[0.8rem]">
             <section className="w-full flex items-center justify-start ">
-                <h1 className="text-[white] font-bold text-[1.5rem]">
+                <h1 className="text-[white] font-bold text-[1rem]">
                     Help Comercial - Sistema de Apoio Comercial
                 </h1>
             </section>

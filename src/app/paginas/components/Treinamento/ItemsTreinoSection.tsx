@@ -12,9 +12,9 @@ export default function ItemsTreinoSection({conteudo, Nome}:ITreinamento) {
     return(
         <div className="flex flex-col">
             <section onClick={() => setOptions(!Options)} 
-            className="flex px-8 w-full h-[5rem] bg-padraoCinzaC hover:bg-padraoCinzaE cursor-pointer text-[0.8rem]">
+            className="flex px-8 w-full h-[5rem] bg-padraoCinzaC hover:bg-padraoCinzaE cursor-pointer">
                 <div className="flex flex-row gap-4 items-center">
-                    <Video color="white" className="min-h-[1.5rem] min-w-[1.5rem]"/>
+                    <Video color="white" className="w-[1.5rem] md:w-[1.2rem] 2xl:w-[1.5rem]"/>
                     <h1 className="text-[white] font-semibold">
                         {Nome}
                     </h1>
@@ -32,7 +32,7 @@ export default function ItemsTreinoSection({conteudo, Nome}:ITreinamento) {
                         transition={{ duration: 0.25 }} 
                         className="w-full h-[5rem] cursor-pointer bg-dourado hover:bg-amareloPadrao flex px-8 justify-start items-center">
                         
-                            <h1 className="text-[white] font-semibold text-[0.8rem]">
+                            <h1 className="text-[white] font-semibold">
                                 {x.nome}
                             </h1>
                         

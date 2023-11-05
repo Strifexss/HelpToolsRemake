@@ -30,15 +30,15 @@ export default function BaseDoConhecimentoItems({ Grupo, Conteudo, setDataSecond
         onClick={() => setMenu(!Menu)}
         className="w-full hover:bg-padraoCinzaE bg-padraoCinzaC h-[4rem] flex justify-between items-center gap-8 px-10 cursor-pointer"
       >
-        <Folder color="white"/>
-        <h1 className="text-[white] font-semibold text-center text-[0.8rem]">{Grupo}</h1>
+        <Folder color="white" className="w-[1.5rem] md:w-[1.2rem] 2xl:w-[1.5rem]"/>
+        <h1 className="text-[white] font-semibold text-center">{Grupo}</h1>
         <motion.div
             initial={false}
             animate={{ rotate: Menu ? 360 : -360 }}
             transition={{ type: "spring", stiffness: 260, damping: 20 }}
             style={{ transformOrigin: "center" }} // Define o ponto de rotação no centro
         >
-          {Menu ? <ArrowUpWideNarrow color="white" /> : <ArrowDownWideNarrow color="white" />}
+          {Menu ? <ArrowUpWideNarrow color="white" className="w-[1.5rem] md:w-[1.2rem] 2xl:w-[1.5rem]"/> : <ArrowDownWideNarrow color="white" className="w-[1.5rem] md:w-[1.2rem] 2xl:w-[1.5rem]"/>}
         </motion.div>
       </div>
       <AnimatePresence>
@@ -55,7 +55,7 @@ export default function BaseDoConhecimentoItems({ Grupo, Conteudo, setDataSecond
                 <div onClick={() => Trocar(x)}
                   key={x} 
                   className="w-full h-[4rem] hover:bg-[orange] bg-orangeButton flex justify-center items-center px-10 cursor-pointer">
-                  <h1 className="text-[white] font-semibold text-[0.8rem]">{x}</h1>
+                  <h1 className="text-[white] font-semibold">{x}</h1>
                 </div>
               );
             })}

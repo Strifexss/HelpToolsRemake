@@ -18,14 +18,14 @@ export default function DownloadArea({Data, handleInfoModal, ModalDataTransfer, 
    
 
     return(
-        <section className="h-full 2xl:h-[90vh] w-full md:w-[65%] bg-padraoCinzaSC rounded-md flex flex-col">
-<div className="w-full bg-dourado h-[5rem]  flex justify-center items-center">
-    <h1 className="md:text-[1.2rem] 2xl:text-[1.2rem] font-semibold text-[white] text-center">
+        <section className="h-full 2xl:h-[90vh] w-full md:w-[65%] bg-padraoCinzaSC rounded-md flex flex-col text-[0.8rem] md:text-[0.7rem] 2xl:text-[0.8rem]">
+<div className="w-full bg-dourado h-[4rem] 2xl:min-h-[5rem]  flex justify-center items-center">
+    <h1 className="md:text-[1rem] 2xl:text-[1.2rem] font-semibold text-[white] text-center">
         Arquivos disponiveis para download
     </h1>
 </div>
 <div className="w-full h-full overflow-y-scroll scrollbar-hide">
-    <div className="w-full h-[3rem] border-b-padraoCinzaE border-b-[2px] grid grid-cols-3 md:grid-cols-5 px-2 text-[0.8rem]">
+    <div className="w-full h-[3rem] border-b-padraoCinzaE border-b-[2px] grid grid-cols-3 md:grid-cols-5 px-2 ">
         <h1 className="text-[white] font-semibold flex justify-center items-center">Download</h1>
         <h1 className="text-[white] font-semibold md:flex justify-center items-center hidden">ID</h1>
         <h1 className="text-[white] font-semibold flex justify-center items-center">Nome</h1>

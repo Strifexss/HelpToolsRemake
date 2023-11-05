@@ -15,10 +15,10 @@ export default function Grupos(Props:Props) {
     
 
     return(
-        <section className="w-full md:w-[35%] h-[50%] flex flex-col">
+        <section className="w-full md:w-[35%] h-[50%] flex flex-col text-[0.8rem] md:text-[0.7rem] 2xl:text-[0.8rem]">
             <section className="w-full h-full bg-padraoCinzaSC flex flex-col scrollbar-hide rounded-md">
-                <div className="bg-dourado font-semibold flex justify-center items-center w-full h-[5rem]">
-                    <h1 className="md:text-[1.2rem] font-semibold text-[white]">
+                <div className="bg-dourado font-semibold flex justify-center items-center w-full min-h-[4rem] 2xl:min-h-[5rem]">
+                    <h1 className="md:text-[1rem] font-semibold text-[white]">
                         <h1>Grupos</h1>
                     </h1>
                 </div>

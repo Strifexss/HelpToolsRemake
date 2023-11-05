@@ -34,7 +34,7 @@ export default function Main() {
 
 
     return(
-        <div className="h-full w-full flex flex-col gap-6">
+        <div className="h-full w-full flex flex-col gap-6 text-[0.8rem] md:text-[0.6rem] 2xl:text-[0.8rem]">
             <h1 className="text-[white] text-[1.5rem] font-bold">
                 Treinamento
             </h1>

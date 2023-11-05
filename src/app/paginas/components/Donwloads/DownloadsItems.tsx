@@ -38,10 +38,10 @@ export default function DownloadsItems({Downloads, Local, id, nome, tamanho, ver
       
       
     return(
-        <div className="w-full h-[4rem] bg-padraoCinzaC text-[0.8rem]  hover:bg-padraoCinzaE grid grid-cols-3 md:grid-cols-5 px-2 cursor-pointer">
+        <div className="w-full h-[4rem] bg-padraoCinzaC  hover:bg-padraoCinzaE grid grid-cols-3 md:grid-cols-5 px-2 cursor-pointer">
             <section className="w-full h-full flex justify-center items-center">
                 <Link href={"http://177.43.232.3:10000/helptools2/public/arquivo"} target="_blank">
-                    <Download color="orange"/>
+                    <Download color="orange" className="w-[1.5rem] md:w-[1.2rem] 2xl:w-[1.5rem]"/>
                 </Link>
             </section>
             <section className="w-full h-full hidden md:flex justify-center items-center">
@@ -57,7 +57,7 @@ export default function DownloadsItems({Downloads, Local, id, nome, tamanho, ver
             <section className="w-full h-full hidden md:flex justify-center items-center">
             <h1 onClick={() => {handleInfoModal(true), ModalDataTransfer({id: id, nome: nome, versão: versão, Downloads: Downloads, Local: Local, tamanho: tamanho})}}
                 className="text-[white] font-semibold">
-                <Info color="white" />
+                <Info color="white" className="w-[1.5rem] md:w-[1.2rem] 2xl:w-[1.5rem]"/>
                 </h1>
             </section>
             <section className="w-full h-full flex justify-center items-center">

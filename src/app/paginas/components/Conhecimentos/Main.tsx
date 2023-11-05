@@ -38,7 +38,7 @@ export default function Main() {
       const LimparFiltro = () => useClearFitlerBaseConhecimento({ DataPrimary ,setDataSecondary})
 
     return(
-        <div className="w-full h-full flex flex-col gap-6 overflow-y-scroll scrollbar-hide">
+        <div className="w-full h-full flex flex-col gap-6 overflow-y-scroll scrollbar-hide text-[0.8rem] md:text-[0.6rem] 2xl:text-[0.8rem]">
             <h1 className="text-[white] font-bold text-[1.5rem]">
               Conhecimentos
             </h1>

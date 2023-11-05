@@ -25,7 +25,7 @@ export default function ButtonsSection(Props:Props) {
                     <ModalUSuario show={Props.show}/>
                 }
                 <Buttons show={Props.show} Click={() => setShowModal(!showModal)} 
-                Conteudo={`Olá ${Usuario.getName()}! `} BackgroundOrange Icone={<User2 color="white"/>} key={"Usuario"}/>
+                Conteudo={`Olá ${Usuario.getName()}! `} BackgroundOrange Icone={<User2 color="white" className="w-[1.5rem] md:w-[1.2rem] 2xl:w-[1.5rem]"/>} key={"Usuario"}/>
             </section>
         </section>
     )

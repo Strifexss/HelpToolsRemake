@@ -12,10 +12,10 @@ interface Props {
 export default function WrapperMaisUtilizados({DataSecondary}:Props) {
 
     return(
-        <div className="w-full md:w-[70%] h-[300rem] md:h-full bg-padraoCinzaSC flex flex-col overflow-hidden">
-                <div className="bg-dourado w-full h-[5rem] px-8 flex justify-start items-center gap-4">
+        <div className="w-full md:w-[70%] h-[300rem] md:h-full bg-padraoCinzaSC flex flex-col overflow-hidden text-[0.8rem] md:text-[0.6rem] 2xl:text-[0.8rem]">
+                <div className="bg-dourado w-full h-[4rem] 2xl:min-h-[5rem] px-8 flex justify-start items-center gap-4">
                     <Star color="white" fill="white"/>
-                    <h1 className="text-[white] font-semibold text-[1.2rem]">
+                    <h1 className="text-[white] font-semibold text-[1rem]">
                         Mais utilizados
                     </h1>
                 </div>

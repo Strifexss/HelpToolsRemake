@@ -15,49 +15,49 @@ const ArrayDestacados = [
   {
     Conteudo: "Inicio",
     hasBackground: true,
-    Icone: <Home color={`${rotaNome === "/paginas/LandingPage" ? "orange" : "white"}`} />,
+    Icone: <Home className="w-[1.5rem] md:w-[1.2rem] 2xl:w-[1.5rem]" color={`${rotaNome === "/paginas/LandingPage" ? "orange" : "white"}`} />,
     Click: RotaHome(),
     InPage: rotaNome === "/paginas/LandingPage"
   },
   {
     Conteudo: "Download",
     hasBackground: true,
-    Icone: <Download color={`${rotaNome === "/paginas/Downloads" ? "orange" : "white"}`} />,
+    Icone: <Download className="w-[1.5rem] md:w-[1.2rem] 2xl:w-[1.5rem]" color={`${rotaNome === "/paginas/Downloads" ? "orange" : "white"}`} />,
     Click: RotaDownloads(),
     InPage: rotaNome === "/paginas/Downloads"
   },
   {
     Conteudo: "Conhecimento",
     hasBackground: true,
-    Icone: <Library color={`${rotaNome === "/paginas/Conhecimentos" ? "orange" : "white"}`} />,
+    Icone: <Library className="w-[1.5rem] md:w-[1.2rem] 2xl:w-[1.5rem]" color={`${rotaNome === "/paginas/Conhecimentos" ? "orange" : "white"}`} />,
     Click: RotaConhecimentos(),
     InPage: rotaNome === "/paginas/Conhecimentos"
   },
   {
     Conteudo: "Treinamento",
     hasBackground: false,
-    Icone: <Triangle color={`${rotaNome === "/paginas/Treinamento" ? "orange" : "white"}`} />,
+    Icone: <Triangle className="w-[1.5rem] md:w-[1.2rem] 2xl:w-[1.5rem]" color={`${rotaNome === "/paginas/Treinamento" ? "orange" : "white"}`} />,
     Click: RotaTreinamento(),
     InPage: rotaNome === "/paginas/Treinamento"
   },
   {
     Conteudo: "Documentação",
     hasBackground: false,
-    Icone: <Folder color={`${rotaNome === "/paginas/Documentacao" ? "orange" : "white"}`} />,
+    Icone: <Folder className="w-[1.5rem] md:w-[1.2rem] 2xl:w-[1.5rem]" color={`${rotaNome === "/paginas/Documentacao" ? "orange" : "white"}`} />,
     Click: RotaDocumentacao(),
     InPage: rotaNome === "/paginas/Documentacao"
   },
   {
     Conteudo: "Suporte Comercial",
     hasBackground: false,
-    Icone: <Headphones color={`${rotaNome === "/paginas/SuporteComercial" ? "orange" : "white"}`} />,
+    Icone: <Headphones className="w-[1.5rem] md:w-[1.2rem] 2xl:w-[1.5rem]" color={`${rotaNome === "/paginas/SuporteComercial" ? "orange" : "white"}`} />,
     Click: RotaSuporteComercial(),
     InPage: rotaNome === "/paginas/SuporteComercial"
   },
   {
     Conteudo: "Chat Supervisão",
     hasBackground: false,
-    Icone: <Paperclip color={`${rotaNome === "/paginas/ChatSupervisao" ? "orange" : "white"}`} />,
+    Icone: <Paperclip className="w-[1.5rem] md:w-[1.2rem] 2xl:w-[1.5rem]" color={`${rotaNome === "/paginas/ChatSupervisao" ? "orange" : "white"}`} />,
     Click: ChatSupervisao(),
     InPage: rotaNome === "/paginas/ChatSupervisao"
   },

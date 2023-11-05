@@ -41,11 +41,11 @@ export default function AdicioarGrupo(Props: Props) {
     return (
         <motion.div   
             initial={{ opacity: 0, scale: 0.8, y: -50 }}
-            animate={{ opacity: 1, scale: 1, y: 120 }}
+            animate={{ opacity: 1, scale: 1, y: 60 }}
             transition={{duration: 0.2}}
-            className="w-full border-dourado border-2 h-full md:w-[35rem] md:h-auto bg-padraoCinzaE absolute md:translate-y-44 flex flex-col">
+            className="w-full border-dourado border-2 md:w-[35rem] md:h-auto text-[0.8rem] md:text-[0.6rem] 2xl:text-[0.8rem] bg-padraoCinzaE absolute md:translate-y-44 flex flex-col">
             <section className="w-full h-[4rem] bg-padraoCinzaC flex justify-between items-center px-4">
-                <h1 className="text-[white] text-2xl font-semibold">
+                <h1 className="text-[white] text-[1rem] font-semibold">
                     Adicionar Novo Grupo
                 </h1>
                 <CopyXIcon onClick={() => Props.CloseModal(false)}
@@ -67,7 +67,7 @@ export default function AdicioarGrupo(Props: Props) {
                 {
                     Props.ItemsCheckados?.map(x => {
                         return(
-                            <div key={x.nome} className="w-[49%] h-[3rem] bg-padraoCinzaSC text-[white] text-center font-semibold flex justify-center items-center">
+                            <div key={x.nome} className="w-full md:w-[49%] h-[3rem] bg-padraoCinzaSC text-[white] text-center font-semibold flex justify-center items-center">
                                 {x.nome}
                             </div>
                         )

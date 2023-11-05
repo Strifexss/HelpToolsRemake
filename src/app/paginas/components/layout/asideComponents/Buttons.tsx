@@ -18,7 +18,7 @@ export default function Buttons({show, BackgroundOrange = false,InPage = false, 
                     Icone
                 }
                 { show &&
-                <h1 className={`md:text-[0.7rem] 2xl:text-[0.8rem]  font-semibold ${InPage ? "text-dourado" : "text-[white]"}`}>
+                <h1 className={`font-semibold ${InPage ? "text-dourado" : "text-[white]"}`}>
                     {Conteudo}
                 </h1>
                 }

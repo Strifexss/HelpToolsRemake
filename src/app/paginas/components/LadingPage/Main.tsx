@@ -5,6 +5,7 @@ import Wrapper from './Wrapper';
 import { ConteudoWrapper, LiberacoesConteudo } from './itemsWrapper/itemsWrapper';
 import Grafico from './graficos/Grafico';
 import CarouselImg from './carouselImg/carouselImg';
+import CarouselImgCopy from './carouselImg/carouselImg copy';
 
 export default function Main() {
   const Usuario = new UserModel();
@@ -19,7 +20,7 @@ export default function Main() {
           Sua jornada rumo ao próximo nível está apenas começando!
         </h1>
       </section>
-      <section className="w-full flex flex-row justify-center gap-8 md:gap-16 2xl:gap-12 2xl:gap-y-4 flex-wrap">
+      <section className="w-full flex flex-row justify-center gap-y-24 md:gap-16 2xl:gap-12 2xl:gap-y-16 md:gap-y-12 flex-wrap">
         <CarouselImg/>
         <Grafico positionLabel='top' Tipo='bar'/>
         <Grafico positionLabel='right' Tipo='doughnut'/>

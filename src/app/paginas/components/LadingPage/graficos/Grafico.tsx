@@ -79,7 +79,7 @@ export default function Grafico({ Tipo, positionLabel }: Props) {
   }, [createChart]);
 
   return (
-    <div className='w-full md:w-[30%] 2xl:w-[30%] h-[20rem] 2xl:h-[20rem]'>
+    <div className='w-full min-w-[28rem] md:min-w-[28.5%] md:w-[28.5%] md:h-[15rem] 2xl:w-[30%] h-[20rem] 2xl:h-[20rem]'>
       <canvas
         id="grafico"
         ref={chartContainerRef}
