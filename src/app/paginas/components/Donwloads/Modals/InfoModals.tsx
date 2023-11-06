@@ -11,9 +11,9 @@ export default function ModalsInfos({handleInfoModal, ModalData}:Props) {
     return(
         <motion.div 
         initial={{ opacity: 0, scale: 0.8, x: -150 }}
-        animate={{ opacity: 1, scale: 1, x: 0, y:120 }}
+        animate={{ opacity: 1, scale: 1, x: 0, y:80 }}
         transition={{duration: 0.2}}
-        className="bg-padraoCinzaE w-[30rem] h-[30rem] absolute p-8 flex flex-col gap-8 border-dourado border-[2px]  2xl:translate-y-[7rem]">
+        className="bg-padraoCinzaE w-[30rem] h-auto absolute p-8 flex flex-col gap-8 border-dourado border-[2px]  2xl:translate-y-[7rem]">
             <div className="w-full flex justify-between">
                 <h1 className="text-[white] font-semibold text-[1.2rem]">
                     {ModalData?.nome}

@@ -4,5 +4,6 @@ export default interface IDownloads {
     versão?: string,
     Local?: string,
     tamanho?: number,
-    Downloads?: number
+    Downloads?: number,
+    link: string
 }

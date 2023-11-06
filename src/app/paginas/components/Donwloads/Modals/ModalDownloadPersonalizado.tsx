@@ -9,7 +9,12 @@ interface Props{
 export default function ModalDownloadPersonalizado({items, ClickCancelar}:Props) {
 
     const handleDownload = () => {
-        window.alert(`Download personalizado Iniciado: ${items?.map(x => {return(x.nome)})}`)
+        if (items) {
+            items.forEach(item => {
+                console.log(item)
+                window.open(item.link, '_blank');
+            });
+        }
     }
 
     return(

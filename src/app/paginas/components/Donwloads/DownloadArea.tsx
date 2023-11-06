@@ -35,7 +35,7 @@ export default function DownloadArea({Data, handleInfoModal, ModalDataTransfer, 
     {
         Data?.map(x => {
             return(
-                <DownloadsItems CheckedItemsArray={CheckedItemsArray} CheckedItems={CheckedItems} ModalDataTransfer={ModalDataTransfer} handleInfoModal={handleInfoModal} key={x.id} id={x.id} nome={x.nome} Downloads={x.Downloads} Local={x.Local} tamanho={x.tamanho} versão={x.versão}/>
+                <DownloadsItems CheckedItemsArray={CheckedItemsArray} CheckedItems={CheckedItems} ModalDataTransfer={ModalDataTransfer} handleInfoModal={handleInfoModal} key={x.id} id={x.id} nome={x.nome} Downloads={x.Downloads} Local={x.Local} tamanho={x.tamanho} versão={x.versão} link={x.link}/>
             )
         })
     }
