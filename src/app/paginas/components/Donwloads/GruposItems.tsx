@@ -16,10 +16,17 @@ export default function GruposItems(Props:Props) {
         Props.OpenItemsGrupos(true)
     }
 
+    function HandleDownload() {
+        console.log(Props.Conteudo)
+        Props.Conteudo.Downloads.map(x => {
+            window.open(x.link, '_blank')
+        })
+    }
+
     return(
         <div className="w-full h-[4rem] bg-padraoCinzaC hover:bg-padraoCinzaE flex flex-row gap-16 justify-between px-8 cursor-pointer">
             <div className="flex justify-center items-center h-full">
-                <Download onClick={() => window.alert(`Donwload ${Props.Conteudo.nome} iniciado`)} 
+                <Download onClick={() => HandleDownload()} 
                 color="orange" className="w-[1.5rem] md:w-[1.2rem] 2xl:w-[1.5rem]"/>
             </div>
             <div className="h-full flex justify-center items-center">

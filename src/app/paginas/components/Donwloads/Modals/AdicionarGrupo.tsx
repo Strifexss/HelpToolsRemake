@@ -24,14 +24,17 @@ export default function AdicioarGrupo(Props: Props) {
     } 
 
     function adicionar() {
-        const novosDownloads = Props.ItemsCheckados?.map(x => x.nome) || [""]
-        
+        const novosDownloads = Props.ItemsCheckados?.map(x => ({
+            nome: x.nome,
+            link: x.link
+        })) || [{ nome: "", link: "" }];
+            
         Props.SetGrupo(prevState => 
             [...prevState, {
                 nome: nome,
                 Downloads: novosDownloads
-            }]    
-            )
+            }]
+        )
         Props.CloseModal(true)
         window.alert("Adicionado")
     }

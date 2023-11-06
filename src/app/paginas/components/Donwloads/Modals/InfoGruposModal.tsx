@@ -42,9 +42,9 @@ export default function InfosGrupoModal(Props: Props) {
         <section className="w-full h-full overflow-y-scroll scrollbar-hide flex flex-col gap-2">
             {Props.Dados.Downloads.map(x => {
                 return(
-                    <div key={x} className="w-full h-[3rem] bg-padraoCinzaC flex p-2 items-center justify-center">
+                    <div key={x.nome} className="w-full h-[3rem] bg-padraoCinzaC flex p-2 items-center justify-center">
                         <h1 className="text-[white] font-semibold text-center">
-                            {x}
+                            {x.nome}
                         </h1>
                     </div>
                 )
