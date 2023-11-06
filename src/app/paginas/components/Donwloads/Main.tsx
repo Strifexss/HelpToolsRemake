@@ -25,7 +25,7 @@ export default function Main() {
     const [PrimaryData, setPrimaryData] = useState<IDownloads[] | null >(null)
     const [SecondaryData, setDataSecondary] = useState<IDownloads[] | null >(null)
     const [ItemsDoGrupo, setItemsGrupos] = useState<IDonwloadGrupos[]>(ItemsGrupos)
-    const [modalItemGrupo, setModalItemsGruposInfos] = useState<IDonwloadGrupos>({nome: "Iniciar", Downloads: [""]})
+    const [modalItemGrupo, setModalItemsGruposInfos] = useState<IDonwloadGrupos>({nome: "Iniciar", Downloads: [{nome: "", link: ""}]})
    
     useEffect(() => {
         const fetchData = async () => {
